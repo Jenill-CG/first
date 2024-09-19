@@ -14,7 +14,7 @@ import folium
 import plotly.express as px
 import streamlit.components.v1 as components
 
-welcome_message= "Welcome Bhaiyaji"
+
 
 # Define the parameter descriptions
 parameter_descriptions = {
@@ -310,12 +310,11 @@ def main():
     """
 
 
-
-    
-
     # Apply the custom CSS
     st.markdown(css, unsafe_allow_html=True)
-
+    
+    
+    welcome_message= "Welcome Behenji!"
     # Display the styled header
     st.markdown(f"<div class='custom-header'>{welcome_message}</div>", unsafe_allow_html=True)
     st.markdown("<div class='custom-header'>Tool for ID Generation</div>", unsafe_allow_html=True)
