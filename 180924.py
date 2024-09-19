@@ -379,9 +379,9 @@ def main():
 
     # Data for the example table
     data = {
+        'School_ID': [1001],
         'District': ['District A'],
         'Block': ['Block A'],
-        'School_ID': [1001],
         'School': ['School A'],
         'Total_Students': [300]
     }
