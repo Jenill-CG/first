@@ -499,7 +499,7 @@ def main():
             district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
             block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
             school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
-            student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=4)
+            student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
             
             # Display parameter descriptions directly in selectbox
             parameter_options = list(parameter_descriptions.values())
