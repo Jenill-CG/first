@@ -471,7 +471,7 @@ def main():
         
         if run_default:
             # Default parameters
-            partner_id = 1
+            partner_id = 11
             grade = st.number_input("Grade", min_value=1, value=1)
             buffer_percent = 0.0
             district_digits = district_digit_count
