@@ -14,8 +14,6 @@ import folium
 import plotly.express as px
 import streamlit.components.v1 as components
 
-import requests
-from bs4 import BeautifulSoup
 
 
 
