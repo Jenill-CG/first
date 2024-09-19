@@ -7,3 +7,4 @@ xlsxwriter
 streamlit_pdf_viewer
 streamlit_folium 
 plotly
+os
