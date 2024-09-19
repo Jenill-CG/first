@@ -265,9 +265,9 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(15, 4, '', border='LTR', align='C')
         pdf.cell(72, 4, '', border='LTR', align='C')
         pdf.cell(12, 4, '', border='LTR', align='C')
-        pdf.cell(10, 4, '', border='LTR', align='C')
-        pdf.cell(20, 4, '', border='LTR', align='C')
-        pdf.cell(20, 4, '', border='LTR', align='C')
+        pdf.cell(18, 4, '', border='LTR', align='C')
+        pdf.cell(16, 4, '', border='LTR', align='C')
+        pdf.cell(16, 4, '', border='LTR', align='C')
         pdf.cell(12, 4, '', border='LTR', align='C')
         pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
 
