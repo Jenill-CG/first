@@ -14,7 +14,12 @@ import folium
 import plotly.express as px
 import streamlit.components.v1 as components
 
-
+try:
+    user_l = os.getlogin()
+    user_login= user_l.lower().capitalize()
+    welcome_message = f"Welcome, {user_login}"
+    except Exception:
+    welcome_message = "Welcome Chacha"
 
 # Define the parameter descriptions
 parameter_descriptions = {
@@ -314,13 +319,7 @@ def main():
     st.markdown(css, unsafe_allow_html=True)
     
     
-    try:
-        
-        user_l = os.getlogin()
-        user_login= user_l.lower().capitalize()
-        welcome_message = f"Welcome, {user_login}"
-    except Exception:
-        welcome_message = "Welcome Chacha"
+
 
 
     # Display the styled header
