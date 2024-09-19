@@ -315,12 +315,11 @@ def main():
     
     
     try:
-    user_login = os.getlogin().lower().capitalize()
-    welcome_message = f"Welcome, {user_login}"
+        user_login = os.getlogin().lower().capitalize()
+        welcome_message = f"Welcome, {user_login}"
     except Exception:
-    welcome_message = "Welcome"
+        welcome_message = "Welcome"
 
-    st.write(welcome_message)
 
     # Display the styled header
     st.markdown(f"<div class='custom-header'>{welcome_message}</div>", unsafe_allow_html=True)
