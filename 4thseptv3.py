@@ -18,7 +18,7 @@ import streamlit.components.v1 as components
 
 
 try:
-    user_l = os.environ.get('USER')
+    user_l = os.environ.get('USER') or os.environ.get('USERNAME')
     user_login= user_l.lower().capitalize()
     welcome_message = f"Welcome, {user_login}"
 except Exception:
