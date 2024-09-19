@@ -315,7 +315,9 @@ def main():
     
     
     try:
-        user_login = os.getlogin().lower().capitalize()
+        
+        user_l = os.getlogin().
+        user_login= user_l.lower().capitalize()
         welcome_message = f"Welcome, {user_login}"
     except Exception:
         welcome_message = "Welcome Chacha"
