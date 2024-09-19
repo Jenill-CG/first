@@ -14,6 +14,8 @@ import folium
 import plotly.express as px
 import streamlit.components.v1 as components
 
+welcome_message= "Welcome Bhaiyaji"
+
 # Define the parameter descriptions
 parameter_descriptions = {
     'A1': "School + Grade + Student",
@@ -309,7 +311,7 @@ def main():
 
 
 
-    welcome_message= "Welcome Bhaiyaji"
+    
 
     # Apply the custom CSS
     st.markdown(css, unsafe_allow_html=True)
