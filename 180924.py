@@ -705,9 +705,9 @@ def main():
                 'STUDENT ID': 15,
                 'STUDENT NAME': 72,
                 'GENDER': 12,
-                'TAB ID': 10,
-                'SUBJECT 1': 20,
-                'SUBJECT 2': 20,
+                'TAB ID': 18,
+                'SUBJECT 1': 16,
+                'SUBJECT 2': 16,
                 'SECTION': 12,
                 'SESSION': 12
             }
