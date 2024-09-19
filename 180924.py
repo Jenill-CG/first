@@ -249,7 +249,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.ln(0.5)
 
         # Second row of headers (merged cells)
-        pdf.set_font("Arial", 'B', size=5)
+        pdf.set_font("Arial",  size=5)
         pdf.cell(6, 4.5, '', border='LBR', align='C')  # Empty cell under S.NO
         pdf.cell(16, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
         pdf.cell(73, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
@@ -287,7 +287,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.ln(0.5)
 
         # Second row of headers (merged cells)
-        pdf.set_font("Arial", 'B', size=5)
+        pdf.set_font("Arial",  size=5)
         pdf.cell(6, 4.5, '', border='LBR', align='C')  # Empty cell under S.NO
         pdf.cell(15, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
         pdf.cell(72, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
