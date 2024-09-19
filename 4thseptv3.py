@@ -318,7 +318,7 @@ def main():
         user_login = os.getlogin().lower().capitalize()
         welcome_message = f"Welcome, {user_login}"
     except Exception:
-        welcome_message = "Welcome"
+        welcome_message = "Welcome Chacha"
 
 
     # Display the styled header
