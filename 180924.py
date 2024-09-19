@@ -477,7 +477,7 @@ def main():
             district_digits = 2
             block_digits = 2
             school_digits = school_digit_count
-            student_digits = 3
+            student_digits = student_digit_count
             selected_param = 'A4'  # Default parameter
         elif customize_id:
             # Custom parameters
