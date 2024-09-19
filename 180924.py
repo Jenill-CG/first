@@ -60,7 +60,7 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     data = pd.read_excel(uploaded_file)
     # Check for duplicate School_IDs
     if data['School_ID'].duplicated().any():
-        raise ValueError("Duplicate School_ID found in the uploaded file. Please ensure each School_ID is unique.")
+        raise ValueError("Duplicate School_ID found in the uploaded file. Please ensure each School_ID are unique.")
     
     unique_school_count = data['School_ID'].nunique()
     digit_count = len(str(unique_school_count))
