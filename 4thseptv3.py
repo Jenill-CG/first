@@ -14,12 +14,32 @@ import folium
 import plotly.express as px
 import streamlit.components.v1 as components
 
+import requests
+from bs4 import BeautifulSoup
+
+# URL of the page where the username is located
+url = 'https://example.com/user-profile'
+
+# Fetch the page content
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Assuming the username is inside a <span> tag with a class 'username'
+username = soup.find('span', class_='username').text
+
+
+
+
 try:
-    user_l = os.getuid()
+    user_l =  username #os.getuid()
     user_login= user_l.lower().capitalize()
     welcome_message = f"Welcome, {user_login}"
 except Exception:
     welcome_message = "Welcome Chacha"
+
+
+
+
 
 # Define the parameter descriptions
 parameter_descriptions = {
