@@ -15,7 +15,7 @@ import plotly.express as px
 import streamlit.components.v1 as components
 
 try:
-    user_l = os.environ.get()
+    user_l = os.getuid()
     user_login= user_l.lower().capitalize()
     welcome_message = f"Welcome, {user_login}"
 except Exception:
