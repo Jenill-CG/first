@@ -474,8 +474,8 @@ def main():
             partner_id = 1
             grade = st.number_input("Grade", min_value=1, value=1)
             buffer_percent = 0.0
-            district_digits = 2
-            block_digits = 2
+            district_digits = district_digit_count
+            block_digits = block_digit_count
             school_digits = school_digit_count
             student_digits = student_digit_count
             selected_param = 'A4'  # Default parameter
