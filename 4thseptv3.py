@@ -307,11 +307,15 @@ def main():
     </style>
     """
 
+
+
+    welcome_message= "Welcome Bhaiyaji"
+
     # Apply the custom CSS
     st.markdown(css, unsafe_allow_html=True)
 
     # Display the styled header
-    st.markdown("<div class='custom-header'>Welcome!</div>", unsafe_allow_html=True)
+    st.markdown("<div class='custom-header'>{welcome_message}</div>", unsafe_allow_html=True)
     st.markdown("<div class='custom-header'>Tool for ID Generation</div>", unsafe_allow_html=True)
 
     # Data for the example table
