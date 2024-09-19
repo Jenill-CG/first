@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup
 
 
 try:
-    user_l =  os.getuid()
+    user_l =  getpass.getuser()
     user_login= user_l.lower().capitalize()
     welcome_message = f"Welcome, {user_login}"
 except Exception:
