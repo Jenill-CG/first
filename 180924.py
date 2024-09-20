@@ -446,7 +446,7 @@ def main():
         """
     )
     
-    File uploader section
+    #File uploader section
 
     uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx"])
     if uploaded_file is not None:
@@ -458,6 +458,8 @@ def main():
         unique_block_count = data['Block'].nunique()
         block_digit_count = len(str(unique_block_count))
         student_digit_count = len(str(max(data['Total_Students'])))
+
+
         
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
