@@ -457,6 +457,9 @@ def main():
         unique_block_count = data['Block'].nunique()
         block_digit_count = len(str(unique_block_count))
         student_digit_count = len(str(max(data['Total_Students'])))
+        
+        # Centered and colored message
+        st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
     
     st.info(
         """
@@ -467,9 +470,8 @@ def main():
         - This program will only accept a single sheet in the input and will not permit hidden sheets.
         """
     )
-        
-        # Centered and colored message
-        st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
+
+
         
         col1, col2= st.columns([1,1])
         with col1:    
