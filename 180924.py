@@ -473,9 +473,9 @@ def main():
     customize_id = st.checkbox("IDs with Customized Settings")
         
         # Ensure only one checkbox is selected
-        if run_default and customize_id:
-            st.warning("Please select only one option.")
-            return
+    if run_default and customize_id:
+        st.warning("Please select only one option.")
+        return
 
         # Set checkboxes_checked to True if either checkbox is selected
         st.session_state['checkboxes_checked'] = run_default or customize_id
