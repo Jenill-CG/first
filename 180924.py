@@ -486,8 +486,9 @@ def main():
             partner_id = 11
             col1, col2= st.columns([1,1])
             with col1:
-                grade = st.number_input("➡️ Please provide required Values", min_value=1, value=1)
-            
+                grade = st.number_input("➡️ Please provide Grade Value", min_value=1, value=1)
+            with col2:
+                st.write("")
             # buffer_percent = 0
             buffer_percent = 0.0
             district_digits = district_digit_count
