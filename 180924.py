@@ -437,7 +437,7 @@ def main():
         """
         **Note:**
         
-        - Please make sure values in each raw of "School_ID" are UNIQUE.
+        - Please make sure that input values in each raw of "School_ID" column are UNIQUE.
         - Please upload an XLSX file that is less than 200MB in size.
         """
     )
