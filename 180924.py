@@ -568,11 +568,13 @@ def main():
             len(str(partner_id)) if 'Partner' in part else 
             student_digits)}" for part in format_parts])
 
+            school_format = 'X' * school_digits
+
             # Display the ID format with a smaller font size
             st.markdown(f"<p style='color: blue; font-size: small;'>Your ID format would be: {format_string}</p>", unsafe_allow_html=True)
             # Display the School Code format based on the selected parameter
 
-            school_format = 'X' * school_digits[0]
+
             # replace with above var
             st.markdown(f"<p style='color: blue; font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
         
