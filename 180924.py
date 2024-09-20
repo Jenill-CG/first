@@ -439,6 +439,7 @@ def main():
         
         - Please make sure that input values in each raw of "School_ID" column are UNIQUE.
         - Please upload an XLSX file that is less than 200MB in size.
+        - Please make sure your input file has only 1 input sheet and no other hidden sheets.
         """
     )
     
