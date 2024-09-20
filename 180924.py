@@ -483,7 +483,16 @@ def main():
         elif customize_id:
             # Custom parameters
             st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
-            partner_id = st.number_input("Partner ID", min_value=12, value=12)
+            
+            col1, col2, col3 = st.columns([1,2,1])
+            with col1:
+                partner_id = st.number_input("Partner ID", min_value=12, value=12)
+            with col2:
+                grade = st.number_input("Grade", min_value=1, value=1)
+            with col3:        
+                buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
+  
+            # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
             # col1, col2 = st.columns([1, 3])
             # with col1:
@@ -494,12 +503,13 @@ def main():
             #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
             
 
-            buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
+            #buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
+            
             #buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
             #buffer_percent =st.radio("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
             #buffer_percent = st.select_slider("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=0)
 
-            grade = st.number_input("Grade", min_value=1, value=1)
+            # grade = st.number_input("Grade", min_value=1, value=1)
                 
             # Message in blue color above District ID Digits
             st.markdown(
