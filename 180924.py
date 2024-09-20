@@ -363,7 +363,7 @@ def main():
         background-color: #ffffff; /* Light background color */
         # border-radius: 10px; /* Rounded corners */
         # box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+        # text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
         margin-top: 5px; /* Add top margin */
         margin-bottom: 5px; /* Add bottom margin */
     }
