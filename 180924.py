@@ -488,7 +488,7 @@ def main():
             with col1:
                 grade = st.number_input("➡️ Please provide Grade Value", min_value=1, value=1)
             with col2:
-                st.write("")
+                st.write(" ")
             # buffer_percent = 0
             buffer_percent = 0.0
             district_digits = district_digit_count
