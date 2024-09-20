@@ -358,7 +358,7 @@ def main():
         font-size: 26px; /* Larger font size for prominence */
         # font-weight: bold; /* Bold font weight */
         color: #F0BF4C; /* Primary color for the text */
-        text-align: center; /* Center the text */
+        text-align: right; /* Center the text */
         padding: 2px; /* Add padding around the text */
         background-color: #ffffff; /* Light background color */
         # border-radius: 10px; /* Rounded corners */
