@@ -335,7 +335,7 @@ def main():
         st.markdown("""
             <div style='border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; background-color: #d4edda; color: #155724;'>
                 <h2 style='text-align: center; color: #155724;'>Thank You for using the Attendance Sheet Generator!</h2>
-                <p style='text-align: center; font-size: 18px; color: #155724;'>We hope the generated PDFs met your expectations.</p>
+                <p style='text-align: center; font-size: 18px; color: #155724;'>We hope the generated PDFs meet your expectations.</p>
                 <h3 style='text-align: center; color: #155724;'>We'd love to hear your feedback!</h3>
                 <p style='text-align: center;'><a href='https://forms.gle/jpeC9xmtzSBqSQhL9' target='_blank' style='color: #155724;'>Please fill out our feedback form</a>.</p>
             </div>
@@ -463,14 +463,13 @@ def main():
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
         
-        col099, col098= st.columns([1,1])
-        with col099: 
+        col1, col2= st.columns([1,1])
+        with col1:    
             run_default = st.checkbox("IDs with Default Settings")
-        with col098:
+        with col2:
             customize_id = st.checkbox("IDs with Customized Settings")
 
-        # # Checkboxes to select mode
-        
+        # Checkboxes to select mode
         # run_default = st.checkbox("IDs with Default Settings")
         # customize_id = st.checkbox("IDs with Customized Settings")
         
@@ -485,11 +484,7 @@ def main():
         if run_default:
             # Default parameters
             partner_id = 11
-            col1, col2= st.columns([1,1])
-            with col1:
-                grade = st.number_input("➡️ Please provide Grade Value", min_value=1, value=1)
-            with col2:
-                st.write(" ")
+            grade = st.number_input("Grade", min_value=1, value=1)
             # buffer_percent = 0
             buffer_percent = 0.0
             district_digits = district_digit_count
@@ -501,23 +496,23 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col3, col4, col5 = st.columns([1,1,1])
-            with col3:
+            col1, col2, col3 = st.columns([1,1,1])
+            with col1:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
-            with col4:
+            with col2:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
-            with col5:        
+            with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
-            # colx1, colx2 = st.columns([1, 3])
-            # with colx1:
+            # col1, col2 = st.columns([1, 3])
+            # with col1:
             # # Select slider with reduced width placed in the first narrow column
             #     st.write("Enter values")
             # #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
-            # with colx2:
+            # with col2:
             #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
             
 
@@ -532,14 +527,14 @@ def main():
             # Message in blue color above District ID Digits
             st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
 
-            col6, col7, col8, col9 = st.columns([1,1,1,1])
-            with col6:
+            col1, col2, col3, col4 = st.columns([1,1,1,1])
+            with col1:
                 district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
-            with col7:
+            with col2:
                 block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
-            with col8:
+            with col3:
                 school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
-            with col9:
+            with col4:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
 
 
@@ -676,14 +671,14 @@ def main():
         num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
         num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
-        coll1, coll2, coll3, coll4 = st.columns(4)
-        with coll1:
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
             st.metric("Number of Students", num_students)
-        with coll2:
+        with col2:
             st.metric("Number of Schools", num_schools)
-        with coll3:
+        with col3:
             st.metric("Number of Blocks", num_blocks)
-        with coll4:
+        with col4:
             st.metric("Number of Districts", num_districts)
         
         # Download button for full data with Custom_IDs and Student_IDs
