@@ -1,4 +1,4 @@
-import streamlit as st
+Cimport streamlit as st
 import pandas as pd
 import numpy as np
 import zipfile
@@ -357,7 +357,7 @@ def main():
     .custom-header {
         font-size: 26px; /* Larger font size for prominence */
         # font-weight: bold; /* Bold font weight */
-        color: #f76c6c; /* Primary color for the text */
+        color: #F0BF4C; /* Primary color for the text */
         text-align: center; /* Center the text */
         padding: 5px; /* Add padding around the text */
         background-color: #ffffff; /* Light background color */
