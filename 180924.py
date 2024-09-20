@@ -572,7 +572,7 @@ def main():
             st.markdown(f"<p style='color: blue; font-size: small;'>Your ID format would be: {format_string}</p>", unsafe_allow_html=True)
             # Display the School Code format based on the selected parameter
 
-            school_format = 'X' * school_digits 
+            school_format = 'X' * school_digits[0]
             # replace with above var
             st.markdown(f"<p style='color: blue; font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
         
