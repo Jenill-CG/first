@@ -355,7 +355,7 @@ def main():
     css = """
     <style>
     .custom-header {
-        font-size: 40px; /* Larger font size for prominence */
+        font-size: 20px; /* Larger font size for prominence */
         font-weight: bold; /* Bold font weight */
         color: #f76c6c; /* Primary color for the text */
         text-align: center; /* Center the text */
@@ -364,8 +364,8 @@ def main():
         # border-radius: 10px; /* Rounded corners */
         # box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
-        margin-top: 10px; /* Add top margin */
-        margin-bottom: 10px; /* Add bottom margin */
+        margin-top: 5px; /* Add top margin */
+        margin-bottom: 5px; /* Add bottom margin */
     }
     </style>
     """
