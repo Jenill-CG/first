@@ -572,7 +572,7 @@ def main():
             # Display the School Code format based on the selected parameter
 
             school_format = 'X' * school_digits # replace with above var
-            st.markdown(f"<p style=' color=blue; font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='color: blue; font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
         
         # Generate button action
         if st.session_state['checkboxes_checked']:
