@@ -335,7 +335,7 @@ def main():
         st.markdown("""
             <div style='border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; background-color: #d4edda; color: #155724;'>
                 <h2 style='text-align: center; color: #155724;'>Thank You for using the Attendance Sheet Generator!</h2>
-                <p style='text-align: center; font-size: 18px; color: #155724;'>We hope the generated PDFs meet your expectations.</p>
+                <p style='text-align: center; font-size: 18px; color: #155724;'>We hope the generated PDFs met your expectations.</p>
                 <h3 style='text-align: center; color: #155724;'>We'd love to hear your feedback!</h3>
                 <p style='text-align: center;'><a href='https://forms.gle/jpeC9xmtzSBqSQhL9' target='_blank' style='color: #155724;'>Please fill out our feedback form</a>.</p>
             </div>
@@ -484,9 +484,9 @@ def main():
         if run_default:
             # Default parameters
             partner_id = 11
-            col1, col2= st.columns([1,1])
-            with col1:
-                grade = st.number_input("➡️ Please provide required Values", min_value=1, value=1)
+            # col1, col2= st.columns([1,1])
+            # with col1:
+            grade = st.number_input("➡️ Please provide required Values", min_value=1, value=1)
             
             # buffer_percent = 0
             buffer_percent = 0.0
