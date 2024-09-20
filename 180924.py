@@ -560,6 +560,7 @@ def main():
             # Create the format string based on selected_param
             param_description = parameter_descriptions[selected_param]
             format_parts = param_description.split(' + ')
+
             format_string = ' '.join([f"{'X' * (school_digits if 'School' in part else 
             block_digits if 'Block' in part else 
             district_digits if 'District' in part else 
@@ -571,7 +572,8 @@ def main():
             st.markdown(f"<p style='color: blue; font-size: small;'>Your ID format would be: {format_string}</p>", unsafe_allow_html=True)
             # Display the School Code format based on the selected parameter
 
-            school_format = 'X' * school_digits # replace with above var
+            school_format = 'X' * school_digits 
+            # replace with above var
             st.markdown(f"<p style='color: blue; font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
         
         # Generate button action
