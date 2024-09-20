@@ -429,6 +429,7 @@ def main():
     }
     </style>
     """
+    
     # Display the text and table
     st.markdown(css, unsafe_allow_html=True)
     # st.warning("""Please rename your column headers as per input file structure shown""")
@@ -457,18 +458,20 @@ def main():
         block_digit_count = len(str(unique_block_count))
         student_digit_count = len(str(max(data['Total_Students'])))
 
+
+        
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
-        # col099, col098 = st.columns([1, 1])
-        # with col099:
-        #     run_default = st.checkbox("IDs with Default Settings")
-            
-        # with col098:
-        #     customize_id = st.checkbox("IDs with Customized Settings")
-            
+        
+        col1, col2= st.columns([1,1])
+        with col1:    
+            run_default = st.checkbox("IDs with Default Settings")
+        with col2:
+            customize_id = st.checkbox("IDs with Customized Settings")
+
         # Checkboxes to select mode
-        run_default = st.checkbox("IDs with Default Settings")
-        customize_id = st.checkbox("IDs with Customized Settings")
+        # run_default = st.checkbox("IDs with Default Settings")
+        # customize_id = st.checkbox("IDs with Customized Settings")
         
         # Ensure only one checkbox is selected
         if run_default and customize_id:
@@ -489,27 +492,26 @@ def main():
             school_digits = school_digit_count
             student_digits = student_digit_count
             selected_param = 'A4'  # Default parameter
-            
         elif customize_id:
-            # Custom parameters
+            # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1,col2,col3 = st.columns([1,1,1])
+            col1, col2, col3 = st.columns([1,1,1])
             with col1:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
             with col2:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
-            with col3:
+            with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
             # col1, col2 = st.columns([1, 3])
             # with col1:
-            # Select slider with reduced width placed in the first narrow column
+            # # Select slider with reduced width placed in the first narrow column
             #     st.write("Enter values")
-            # value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
+            # #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
             # with col2:
             #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
             
@@ -669,14 +671,14 @@ def main():
         num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
         num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
-        colx1, colx2, colx3, colx4 = st.columns(4)
-        with colx1:
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
             st.metric("Number of Students", num_students)
-        with colx2:
+        with col2:
             st.metric("Number of Schools", num_schools)
-        with colx3:
+        with col3:
             st.metric("Number of Blocks", num_blocks)
-        with colx4:
+        with col4:
             st.metric("Number of Districts", num_districts)
         
         # Download button for full data with Custom_IDs and Student_IDs
