@@ -448,7 +448,7 @@ def main():
     
     #File uploader section
     st.markdown("➡️ Upload an Excel file")
-    uploaded_file = st.file_uploader("", type=["xlsx"])
+    uploaded_file = st.file_uploader(type=["xlsx"])
     if uploaded_file is not None:
         data = pd.read_excel(uploaded_file)
         unique_school_count = data['School_ID'].nunique()
