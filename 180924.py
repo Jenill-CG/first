@@ -488,10 +488,10 @@ def main():
             col1, col2 = st.columns([1, 3])
             with col1:
             # Select slider with reduced width placed in the first narrow column
-            st.write("Enter values")
+                st.write("Enter values")
             #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
             with col2:
-            buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
+                buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
             
 
             #buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
