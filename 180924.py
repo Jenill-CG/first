@@ -376,8 +376,7 @@ def main():
     # Display the styled header
     # st.markdown("<div class='custom-header'>Welcome!</div>", unsafe_allow_html=True)
     # st.markdown("<div class='custom-header'>Tool for ID Generation</div>", unsafe_allow_html=True)
-    #st.markdown("<div class='custom-header' style="background-color: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
-  CGI's ID Generator Tool</div>", unsafe_allow_html=True)
+    st.markdown("<div class='custom-header' style="background-color: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">CGI's ID Generator Tool</div>", unsafe_allow_html=True)
     st.markdown("<div class='custom-header'>Generate unique IDs quickly and easily!</div>", unsafe_allow_html=True)
 
     # Data for the example table
