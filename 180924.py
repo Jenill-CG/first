@@ -463,7 +463,7 @@ def main():
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
         col099, col098 = st.columns([1, 1])
-        with col099: 
+        with col099:
             run_default = st.checkbox("IDs with Default Settings")
         with col098:
             customize_id = st.checkbox("IDs with Customized Settings")
