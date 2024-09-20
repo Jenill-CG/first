@@ -484,9 +484,9 @@ def main():
         if run_default:
             # Default parameters
             partner_id = 11
-            # col1, col2= st.columns([1,1])
-            # with col1:
-            grade = st.number_input("➡️ Please provide required Values", min_value=1, value=1)
+            col1, col2= st.columns([1,1])
+            with col1:
+                grade = st.number_input("➡️ Please provide required Values", min_value=1, value=1)
             
             # buffer_percent = 0
             buffer_percent = 0.0
