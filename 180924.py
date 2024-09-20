@@ -259,7 +259,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(20, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 3
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
 
-    elif format_option == 'Digital':
+    elif format_option == 'Digital Assessment':
         # Add the Title and Subtitle for digital format
         pdf.cell(6, 4, '', border='LTR', align='C')
         pdf.cell(15, 4, '', border='LTR', align='C')
@@ -683,10 +683,10 @@ def main():
         image_path = "https://raw.githubusercontent.com/AniketParasher/pdfcreator/main/cg.png"
 
         # Choose between pen paper format or digital
-        format_option = st.radio("Choose the format for the attendance sheet", ('Pen Paper Format', 'Digital'))
+        format_option = st.radio("Choose the format for the attendance sheet", ('Pen Paper Assessment', 'Digital Assessment'))
         
         # Number of columns and column names for the table based on the selected format
-        if format_option == 'Pen Paper Format':
+        if format_option == 'Pen Paper Assessment':
             column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3', 'SESSION']
             column_widths = {
                 'S.NO': 6,
