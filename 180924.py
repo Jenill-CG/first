@@ -480,29 +480,29 @@ def main():
         # Set checkboxes_checked to True if either checkbox is selected
         st.session_state['checkboxes_checked'] = run_default or customize_id
         
-        if run_default:
-            # Default parameters
-            partner_id = 11
-            grade = st.number_input("Grade", min_value=1, value=1)
-            # buffer_percent = 0
-            buffer_percent = 0.0
-            district_digits = district_digit_count
-            block_digits = block_digit_count
-            school_digits = school_digit_count
-            student_digits = student_digit_count
-            selected_param = 'A4'  # Default parameter
-        elif customize_id:
-            # # Custom parameters
-            # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
-            st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3 = st.columns([1,1,1])
-            with col1:
-                partner_id = st.number_input("Partner ID", min_value=12, value=12)
-            with col2:
-                buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
-                # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
-            with col3:        
+            if run_default:
+                # Default parameters
+                partner_id = 11
                 grade = st.number_input("Grade", min_value=1, value=1)
+                # buffer_percent = 0
+                buffer_percent = 0.0
+                district_digits = district_digit_count
+                block_digits = block_digit_count
+                school_digits = school_digit_count
+                student_digits = student_digit_count
+                selected_param = 'A4'  # Default parameter
+            elif customize_id:
+                # # Custom parameters
+                # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
+                st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
+                col1, col2, col3 = st.columns([1,1,1])
+                with col1:
+                    partner_id = st.number_input("Partner ID", min_value=12, value=12)
+                with col2:
+                    buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
+                    # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
+                with col3:        
+                    grade = st.number_input("Grade", min_value=1, value=1)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
