@@ -430,7 +430,6 @@ def main():
     }
     </style>
     """
-    
     # Display the text and table
     st.markdown(css, unsafe_allow_html=True)
     # st.warning("""Please rename your column headers as per input file structure shown""")
@@ -459,8 +458,6 @@ def main():
         block_digit_count = len(str(unique_block_count))
         student_digit_count = len(str(max(data['Total_Students'])))
 
-
-        
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
         # col099, col098 = st.columns([1, 1])
