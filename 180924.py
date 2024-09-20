@@ -462,11 +462,11 @@ def main():
         
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
-    col1, col2 = st.columns(2)
-    with col1:    
-        run_default = st.checkbox("IDs with Default Settings")
-    with col2:
-        customize_id = st.checkbox("IDs with Customized Settings")
+        col1, col2 = st.columns(2)
+        with col1:    
+            run_default = st.checkbox("IDs with Default Settings")
+        with col2:
+            customize_id = st.checkbox("IDs with Customized Settings")
 
         # Checkboxes to select mode
         # run_default = st.checkbox("IDs with Default Settings")
@@ -670,14 +670,14 @@ def main():
         num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
         num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
+        colx1, colx2, colx3, colx4 = st.columns(4)
+        with colx1:
             st.metric("Number of Students", num_students)
-        with col2:
+        with colx2:
             st.metric("Number of Schools", num_schools)
-        with col3:
+        with colx3:
             st.metric("Number of Blocks", num_blocks)
-        with col4:
+        with colx4:
             st.metric("Number of Districts", num_districts)
         
         # Download button for full data with Custom_IDs and Student_IDs
