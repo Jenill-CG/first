@@ -462,15 +462,15 @@ def main():
         
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
-        # col099, col098 = st.columns([1, 1])
-        # with col099: 
-        #     run_default = st.checkbox("IDs with Default Settings")
-        # with col098:
-        #     customize_id = st.checkbox("IDs with Customized Settings")
+        col099, col098 = st.columns([1, 1])
+        with col099: 
+            run_default = st.checkbox("IDs with Default Settings")
+        with col098:
+            customize_id = st.checkbox("IDs with Customized Settings")
 
         # Checkboxes to select mode
-        run_default = st.checkbox("IDs with Default Settings")
-        customize_id = st.checkbox("IDs with Customized Settings")
+        # run_default = st.checkbox("IDs with Default Settings")
+        # customize_id = st.checkbox("IDs with Customized Settings")
         
         # Ensure only one checkbox is selected
         if run_default and customize_id:
@@ -493,7 +493,7 @@ def main():
             selected_param = 'A4'  # Default parameter
             
         elif customize_id:
-            # # Custom parameters
+            # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
             col1, col2, col3 = st.columns([1,1,1])
@@ -509,9 +509,9 @@ def main():
 
             # col1, col2 = st.columns([1, 3])
             # with col1:
-            # # Select slider with reduced width placed in the first narrow column
+            # Select slider with reduced width placed in the first narrow column
             #     st.write("Enter values")
-            # #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
+            # value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
             # with col2:
             #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
             
