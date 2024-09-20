@@ -492,9 +492,9 @@ def main():
             student_digits = student_digit_count
             selected_param = 'A4'  # Default parameter
         elif customize_id:
-            # Custom parameters
-            st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
-            
+            # # Custom parameters
+            # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
+            st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
             col1, col2, col3 = st.columns([1,2,1])
             with col1:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
@@ -524,8 +524,7 @@ def main():
                 
             # Message in blue color above District ID Digits
             st.markdown(
-                """
-                <p style='color: blue;'>
+                """➡️ 
                     Please provide required Digits 
                     <span style='color: red;'>(Please select more than "minimum required value")</span>
                 </p>
