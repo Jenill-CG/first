@@ -433,7 +433,7 @@ def main():
     # Display the text and table
     st.markdown(css, unsafe_allow_html=True)
     # st.warning("""Please rename your column headers as per input file structure shown""")
-    st.markdown("Please modify your column headers to match the specified structure⬇️")
+    st.markdown("Please modify your column headers⬇️ to match the specified structure:")
     st.markdown(html_table, unsafe_allow_html=True)
     
     st.info(
