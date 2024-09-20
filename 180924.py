@@ -499,7 +499,7 @@ def main():
             with col1:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
             with col2:
-                buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
+                buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
   
