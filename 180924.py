@@ -469,8 +469,8 @@ def main():
         #     customize_id = st.checkbox("IDs with Customized Settings")
 
         # Checkboxes to select mode
-    run_default = st.checkbox("IDs with Default Settings")
-    customize_id = st.checkbox("IDs with Customized Settings")
+        run_default = st.checkbox("IDs with Default Settings")
+        customize_id = st.checkbox("IDs with Customized Settings")
         
         # Ensure only one checkbox is selected
         if run_default and customize_id:
