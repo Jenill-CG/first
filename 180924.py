@@ -441,14 +441,13 @@ def main():
         **Note:**
         
         - Please make sure that input values in each raw of "School_ID" column are UNIQUE.
-        - Please upload an XLSX file that is less than 200MB in size.
         - This program will only accept a single sheet in the input and will not permit hidden sheets.
         """
     )
     
     #File uploader section
     st.markdown("➡️ Upload an Excel file")
-    uploaded_file = st.file_uploader(type=["xlsx"])
+    uploaded_file = st.file_uploader("Please upload an XLSX file that is less than 200MB in size",type=["xlsx"])
     if uploaded_file is not None:
         data = pd.read_excel(uploaded_file)
         unique_school_count = data['School_ID'].nunique()
