@@ -523,14 +523,8 @@ def main():
             # grade = st.number_input("Grade", min_value=1, value=1)
                 
             # Message in blue color above District ID Digits
-            st.markdown(
-                """➡️ 
-                    Please provide required Digits 
-                    <span style='color: red;'>(Please select more than "minimum required value")</span>
-                </p>
-                """, 
-                unsafe_allow_html=True
-            )
+            st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
+
             col1, col2, col3, col4 = st.columns([1,1,1,1])
             with col1:
                 district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
