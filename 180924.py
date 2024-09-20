@@ -719,7 +719,7 @@ def main():
         # Display the styled header
         st.markdown("<div class='custom-header'>Attendance Sheet Generator</div>", unsafe_allow_html=True)
 
-        image_path = "https://raw.githubusercontent.com/Jenill-CG/first/main/cg.png"
+        image_path = "https://raw.githubusercontent.com/AniketParasher/pdfcreator/main/cg.png"
 
         # Choose between pen paper format or digital
         format_option = st.radio("Choose the format for the attendance sheet", ('Pen Paper Assessment', 'Digital Assessment'))
