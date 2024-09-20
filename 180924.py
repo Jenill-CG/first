@@ -484,7 +484,10 @@ def main():
             # Custom parameters
             st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             partner_id = st.number_input("Partner ID", min_value=12, value=12)
-            buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
+            #buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
+            buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
+
+
             grade = st.number_input("Grade", min_value=1, value=1)
                 
             # Message in blue color above District ID Digits
