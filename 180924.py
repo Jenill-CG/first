@@ -458,15 +458,16 @@ def main():
         block_digit_count = len(str(unique_block_count))
         student_digit_count = len(str(max(data['Total_Students'])))
     
-    # st.info(
-    #     """
-    #     **Note:**
+    st.info(
+        """
+        **Note:**
         
-    #     - Please make sure that input values in each raw of "School_ID" column are UNIQUE.
-    #     - Please upload an XLSX file that is less than 200MB in size.
-    #     - This program will only accept a single sheet in the input and will not permit hidden sheets.
-    #     """
-    # )
+        - Please make sure that input values in each raw of "School_ID" column are UNIQUE.
+        - Please upload an XLSX file that is less than 200MB in size.
+        - This program will only accept a single sheet in the input and will not permit hidden sheets.
+        """
+    )
+        
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
         
