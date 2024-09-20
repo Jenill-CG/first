@@ -463,10 +463,10 @@ def main():
         # Centered and colored message
         st.markdown("<p style='text-align: center; color: green;'>File uploaded successfully!</p>", unsafe_allow_html=True)
         
-        # col1, col2= st.columns([1,1])
-        # with col1: 
+        # col099, col098= st.columns([1,1])
+        # with col099: 
         #     run_default = st.checkbox("IDs with Default Settings")
-        # with col2:
+        # with col098:
         #     customize_id = st.checkbox("IDs with Customized Settings")
 
         # # Checkboxes to select mode
@@ -500,23 +500,23 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3 = st.columns([1,1,1])
-            with col1:
+            col3, col4, col5 = st.columns([1,1,1])
+            with col3:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
-            with col2:
+            with col4:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
-            with col3:        
+            with col5:        
                 grade = st.number_input("Grade", min_value=1, value=1)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
-            # col1, col2 = st.columns([1, 3])
-            # with col1:
+            # colx1, colx2 = st.columns([1, 3])
+            # with colx1:
             # # Select slider with reduced width placed in the first narrow column
             #     st.write("Enter values")
             # #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
-            # with col2:
+            # with colx2:
             #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
             
 
@@ -531,14 +531,14 @@ def main():
             # Message in blue color above District ID Digits
             st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
 
-            col1, col2, col3, col4 = st.columns([1,1,1,1])
-            with col1:
+            col6, col7, col8, col9 = st.columns([1,1,1,1])
+            with col6:
                 district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
-            with col2:
+            with col7:
                 block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
-            with col3:
+            with col8:
                 school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
-            with col4:
+            with col9:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
 
 
@@ -675,14 +675,14 @@ def main():
         num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
         num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
+        coll1, coll2, coll3, coll4 = st.columns(4)
+        with coll1:
             st.metric("Number of Students", num_students)
-        with col2:
+        with coll2:
             st.metric("Number of Schools", num_schools)
-        with col3:
+        with coll3:
             st.metric("Number of Blocks", num_blocks)
-        with col4:
+        with coll4:
             st.metric("Number of Districts", num_districts)
         
         # Download button for full data with Custom_IDs and Student_IDs
