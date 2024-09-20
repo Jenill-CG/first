@@ -544,9 +544,9 @@ def main():
             # Display parameter descriptions directly in selectbox
             parameter_options = list(parameter_descriptions.values())
             # st.markdown("""<style>.custom-selectbox-label {color: blue; margin: 0;}</style><p class='custom-selectbox-label'>Please Select Parameter Set for Desired Combination of Student IDs</p>""",unsafe_allow_html=True)
-            st.markdown("""➡️ Please Select Parameter Set for Desired Combination of Student IDs""",unsafe_allow_html=True)
-            selected_description = st.selectbox("", parameter_options)
-            
+            st.markdown("""➡️ Please select parameter set""",unsafe_allow_html=True)
+            selected_description = st.selectbox("Desired combination for Student IDs", parameter_options)
+    
             # Get the corresponding parameter key
             selected_param = list(parameter_descriptions.keys())[parameter_options.index(selected_description)]
 
@@ -568,11 +568,11 @@ def main():
             student_digits)}" for part in format_parts])
 
             # Display the ID format with a smaller font size
-            st.markdown(f"<p style='font-size: small;'>Your ID format would be: {format_string}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p color=blue; style='font-size: small;'>Your ID format would be: {format_string}</p>", unsafe_allow_html=True)
             # Display the School Code format based on the selected parameter
 
             school_format = 'X' * school_digits # replace with above var
-            st.markdown(f"<p style='font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p color=blue; style='font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
         
         # Generate button action
         if st.session_state['checkboxes_checked']:
