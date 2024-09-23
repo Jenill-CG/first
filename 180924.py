@@ -258,6 +258,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(20, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 2
         pdf.cell(20, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 3
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
+        pdf.ln(4.5)
 
     elif format_option == 'Digital Assessment':
         # Add the Title and Subtitle for digital format
