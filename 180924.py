@@ -223,7 +223,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     table_cell_height = 9
 
     # Add the Title and Subtitle in the Center
-    if format_option == 'Pen Paper Format':
+    if format_option == 'Pen Paper Assessment':
         # Add the Title and Subtitle for pen paper format
         pdf.cell(6, 4, '', border='LTR', align='C')
         pdf.cell(16, 4, '', border='LTR', align='C')
