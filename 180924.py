@@ -1,4 +1,4 @@
-import streamlit as st
+fimport streamlit as st
 import pandas as pd
 import numpy as np
 import zipfile
@@ -298,8 +298,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(16, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 2
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
-
-    pdf.ln(4.5)
+        pdf.ln(4.5)
+    # pdf.ln(4.5)
 
     # Table Rows (based on student_count)
     pdf.set_font('Arial', '', 6)
