@@ -756,9 +756,18 @@ def main():
                 'SESSION': 12
             }
 
-        selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
-        filename_template = naming_options[selected_option]
+        # selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
+        # filename_template = naming_options[selected_option]
         
+        col1, col2= st.columns([1,2])
+        with col1:
+            selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
+        with col2:
+            vb2 = st.write("")
+
+        # selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
+        filename_template = naming_options[selected_option]
+
         if st.button("Click here to Generate PDFs"):
             with tempfile.TemporaryDirectory() as tmp_dir:
                 pdf_paths = []
