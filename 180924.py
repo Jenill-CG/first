@@ -804,12 +804,8 @@ def main():
                         preview_pdf_path = pdf_path
 
                 # Custom smaller header for PDF Preview
-                st.markdown(
-                    """
-                    <h3 style='text-align: left; font-size:24px; color:#4CAF50;'>PDF Preview</h3>
-                    """, 
-                    unsafe_allow_html=True
-                )
+                st.markdown("""<h3 style='text-align: left; font-size:24px; color:#4CAF50;'>PDF Preview</h3>""",unsafe_allow_html=True)
+
                 if preview_pdf_path:
                     # Read the PDF file as binary
                     with open(preview_pdf_path, "rb") as pdf_file:
