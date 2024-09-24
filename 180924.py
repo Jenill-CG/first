@@ -40,8 +40,8 @@ parameter_mapping = {
 
 # Dropdown for selecting file naming format
 naming_options = {
-    "School Name + District Name": "{school_name}_{district_name}",
     "School Name + Block Name": "{school_name}_{block_name}",
+    "School Name + District Name": "{school_name}_{district_name}",
     "School Name + Grade": "{school_name}_Grade{grade}"
 }
 
@@ -504,7 +504,7 @@ def main():
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
             col1, col2, col3 = st.columns([1,1,1])
             with col1:
-                partner_id = st.number_input("Partner ID", min_value=10, value=10)
+                partner_id = st.number_input("Partner ID", min_value=12, value=12)
             with col2:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
