@@ -827,7 +827,7 @@ def main():
                 st.download_button(
                     label="Click to Download Zip File",
                     data=zip_buffer.getvalue(),
-                    file_name="attendance_Sheets.zip",
+                    file_name="Attendance_sheets.zip",
                     mime="application/zip"
                 )
                 st.session_state['thank_you_displayed'] = True  # Set the thank you message state
