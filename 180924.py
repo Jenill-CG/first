@@ -704,7 +704,8 @@ def main():
         .custom-header {
             font-size: 36px; /* Larger font size for prominence */
             font-weight: bold; /* Bold font weight */
-            color: #20c997; /* Primary color for the text */
+            # color: #20c997; /* Primary color for the text */
+            color: #F0BF4C;
             text-align: center; /* Center the text */
             padding: 20px; /* Add padding around the text */
             background-color: #f8f9fa; /* Light background color */
