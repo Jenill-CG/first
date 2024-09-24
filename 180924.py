@@ -461,7 +461,7 @@ def main():
 
         
         # Centered and colored message
-        st.markdown("<p style='text-align: center; color: green;font-size: 26px;'>🥳 File uploaded successfully 🥳</p>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center; color: green;font-size: 26px;'>File uploaded successfully 🥳</p>", unsafe_allow_html=True)
         
         col1, col2= st.columns([1,1])
         with col1:    
