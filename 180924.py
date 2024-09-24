@@ -724,7 +724,7 @@ def main():
         image_path = "https://raw.githubusercontent.com/Jenill-CG/first/main/cg.png"
 
         # Choose between pen paper format or digital
-        format_option = st.radio("Choose the format for the attendance sheet", ('Pen Paper Assessment', 'Digital Assessment'))
+        format_option = st.radio("➡️ Choose the format for the attendance sheet", ('Pen Paper Assessment', 'Digital Assessment'))
         
         # Number of columns and column names for the table based on the selected format
         if format_option == 'Pen Paper Assessment':
@@ -753,7 +753,7 @@ def main():
                 'SESSION': 12
             }
 
-        selected_option = st.selectbox("Choose your file naming format", list(naming_options.keys()))
+        selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
         filename_template = naming_options[selected_option]
         
         if st.button("Click here to Generate PDFs"):
