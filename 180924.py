@@ -759,7 +759,7 @@ def main():
         # selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
         # filename_template = naming_options[selected_option]
         
-        col1, col2= st.columns([1,2])
+        col1, col2= st.columns([2,1])
         with col1:
             selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
         with col2:
