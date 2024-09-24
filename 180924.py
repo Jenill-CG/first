@@ -676,6 +676,7 @@ def main():
         num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
         num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
+        
         col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.metric("Number of Students", num_students)
