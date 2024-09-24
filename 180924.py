@@ -336,7 +336,7 @@ def main():
         st.markdown("""
             <div style='border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; background-color: #d4edda; color: #155724;'>
                 <h2 style='text-align: center; color: #155724;'>Thank You for using the Attendance Sheet Generator!</h2>
-                <p style='text-align: center; font-size: 18px; color: #155724;'>We hope the generated PDFs meet your expectations.</p>
+                <p style='text-align: center; font-size: 18px; color: #155724;'>We hope the generated PDFs are meeting your expectations.</p>
                 <h3 style='text-align: center; color: #155724;'>We'd love to hear your feedback!</h3>
                 <p style='text-align: center;'><a href='https://forms.gle/jpeC9xmtzSBqSQhL9' target='_blank' style='color: #155724;'>Please fill out our feedback form</a>.</p>
             </div>
