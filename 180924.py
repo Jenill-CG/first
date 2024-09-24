@@ -676,15 +676,36 @@ def main():
         num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
         num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
+        # col1, col2, col3, col4 = st.columns(4)
+        # with col1:
+        #     st.metric("Number of Students", num_students)
+        # with col2:
+        #     st.metric("Number of Schools", num_schools)
+        # with col3:
+        #     st.metric("Number of Blocks", num_blocks)
+        # with col4:
+        #     st.metric("Number of Districts", num_districts)
+        
+        st.markdown( """
+    <style>
+    .metric-container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: 100%;
+    }.metric {
+        text-align: center; /* Center the text */
+    }</style>""", unsafe_allow_html=True)
         col1, col2, col3, col4 = st.columns(4)
         with col1:
-            st.metric("Number of Students", num_students)
+            st.markdown("<div class='metric-container'><div class='metric'><strong>Number of Students</strong><br>{}</div></div>".format(num_students), unsafe_allow_html=True)
         with col2:
-            st.metric("Number of Schools", num_schools)
+            st.markdown("<div class='metric-container'><div class='metric'><strong>Number of Schools</strong><br>{}</div></div>".format(num_schools), unsafe_allow_html=True)
         with col3:
-            st.metric("Number of Blocks", num_blocks)
+            st.markdown("<div class='metric-container'><div class='metric'><strong>Number of Blocks</strong><br>{}</div></div>".format(num_blocks), unsafe_allow_html=True)
         with col4:
-            st.metric("Number of Districts", num_districts)
+            st.markdown("<div class='metric-container'><div class='metric'><strong>Number of Districts</strong><br>{}</div></div>".format(num_districts), unsafe_allow_html=True)
+
         
         # Download button for full data with Custom_IDs and Student_IDs
         #st.markdown(download_link(expanded_data, "full_data.xlsx", "Download Full Data (with Custom_IDs and Student_IDs)"), unsafe_allow_html=True)
