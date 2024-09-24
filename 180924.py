@@ -338,12 +338,22 @@ def main():
                 <h2 style='text-align: center; color: #155724;'>Thank You!</h2>
                 <p style='text-align: center; font-size: 18px; color: #155724;'>We hope PDFs are meeting your expectations</p>
                 <p style='text-align: center; font-size: 40px;'>😊</p>
-                <h3 style='text-align: center; color: #155724;'>We'd love to hear your feedback!</h3>
+                <h3 style='text-align: center; color: #155724;'>We'd love to hear your feedback👇</h3>
                 <p style='text-align: center;'><a href='https://forms.gle/jpeC9xmtzSBqSQhL9' target='_blank' style='color: #155724;'>Please fill out our feedback form</a>.</p>
             </div>
         """, unsafe_allow_html=True)
         return
 
+        def show_home():
+            st.title("Home Page")
+            st.write("Welcome to the home page!")
+            
+            # Go to Home button
+            if st.button("Go to Home"):
+                st.experimental_rerun()
+        
+        # Call the function to show home content
+        show_home()
 
         # If the thank you message has already been displayed, show only the thank you message
     # if st.session_state['thank_you_displayed']:
