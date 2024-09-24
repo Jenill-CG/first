@@ -353,23 +353,23 @@ def main():
     #     return
 
     # Centered title
-    # css = """
-    # <style>
-    # .custom-header {
-    #     font-size: 26px; /* Larger font size for prominence */
-    #     # font-weight: bold; /* Bold font weight */
-    #     color: #F0BF4C; /* Primary color for the text */
-    #     text-align: right; /* Center the text */
-    #     padding: 2px; /* Add padding around the text */
-    #     background-color: #ffffff; /* Light background color */
-    #     # border-radius: 10px; /* Rounded corners */
-    #     # box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    #     # text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
-    #     margin-top: 2px; /* Add top margin */
-    #     margin-bottom: 2px; /* Add bottom margin */
-    # }
-    # </style>
-    # """
+    css = """
+    <style>
+    .custom-header {
+        font-size: 26px; /* Larger font size for prominence */
+        # font-weight: bold; /* Bold font weight */
+        color: #F0BF4C; /* Primary color for the text */
+        text-align: right; /* Center the text */
+        padding: 2px; /* Add padding around the text */
+        background-color: #ffffff; /* Light background color */
+        # border-radius: 10px; /* Rounded corners */
+        # box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        # text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+        margin-top: 2px; /* Add top margin */
+        margin-bottom: 2px; /* Add bottom margin */
+    }
+    </style>
+    """
 
     # Apply the custom CSS
     st.markdown(css, unsafe_allow_html=True)
