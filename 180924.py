@@ -338,7 +338,7 @@ def main():
                 <h2 style='text-align: center; color: #155724;'>😊 Thank You 😊</h2>
                 <p style='text-align: center; font-size: 18px; color: #155724;'>We hope PDFs are meeting your expectations</p>
                 <h3 style='text-align: center; color: #155724;'>We'd love to hear your feedback👇</h3>
-                <p style='text-align: center;'><a href='https://forms.gle/jpeC9xmtzSBqSQhL9' target='_blank' style='color: #155724;'>Feedback form</a>.</p>
+                <p style='text-align: center;'><a href='https://forms.gle/jpeC9xmtzSBqSQhL9' target='_blank' style='color: #155724;'>Feedback form</a></p>
             </div>
         """, unsafe_allow_html=True)
         return
