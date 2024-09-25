@@ -7,5 +7,5 @@ xlsxwriter
 streamlit_pdf_viewer
 streamlit_folium 
 plotly
-gspread
-oauth2client.service_account
+#gspread
+#oauth2client.service_account
