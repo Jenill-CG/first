@@ -227,24 +227,24 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         # Add the Title and Subtitle for pen paper format
         pdf.cell(6, 4, '', border='LTR', align='C')
         pdf.cell(16, 4, '', border='LTR', align='C')
-        pdf.cell(73, 4, '', border='LTR', align='C')
+        pdf.cell(67, 4, '', border='LTR', align='C')
         pdf.cell(12, 4, '', border='LTR', align='C')
-        pdf.cell(20, 4, '', border='LTR', align='C')
-        pdf.cell(20, 4, '', border='LTR', align='C')
-        pdf.cell(20, 4, '', border='LTR', align='C')
+        pdf.cell(18, 4, '', border='LTR', align='C')
+        pdf.cell(18, 4, '', border='LTR', align='C')
+        pdf.cell(18, 4, '', border='LTR', align='C')
+        pdf.cell(12, 4, '', border='LTR', align='C')  
         pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
-
         pdf.ln(4)
         # First row of headers
         pdf.cell(6, 0.5, 'S.NO', border='LR', align='C')
         pdf.cell(16, 0.5, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(73, 0.5, 'STUDENT NAME', border='LR', align='C')
+        pdf.cell(67, 0.5, 'STUDENT NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
-        pdf.cell(20, 0.5, 'SUBJECT 1', border='LR', align='C')
-        pdf.cell(20, 0.5, 'SUBJECT 2', border='LR', align='C')
-        pdf.cell(20, 0.5, 'SUBJECT 3', border='LR', align='C')
+        pdf.cell(18, 0.5, 'SUBJECT 1', border='LR', align='C')
+        pdf.cell(18, 0.5, 'SUBJECT 2', border='LR', align='C')
+        pdf.cell(18, 0.5, 'SUBJECT 3', border='LR', align='C')
         pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
-
+        pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # Move to the next line
         pdf.ln(0.5)
 
@@ -737,12 +737,13 @@ def main():
             column_widths = {
                 'S.NO': 6,
                 'STUDENT ID': 16,
-                'STUDENT NAME': 73,
+                'STUDENT NAME': 67,
                 'GENDER': 12,
-                'SUBJECT 1': 20,
-                'SUBJECT 2': 20,
-                'SUBJECT 3': 20,
-                'SESSION': 12
+                'SUBJECT 1': 18,
+                'SUBJECT 2': 18,
+                'SUBJECT 3': 18,
+                'SESSION': 12,
+                'SECTION': 12
             }
         else:
             column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
