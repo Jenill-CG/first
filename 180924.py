@@ -252,12 +252,13 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.set_font("Arial",  size=5)
         pdf.cell(6, 4.5, '', border='LBR', align='C')  # Empty cell under S.NO
         pdf.cell(16, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
-        pdf.cell(73, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
+        pdf.cell(67, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under GENDER
-        pdf.cell(20, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 1
-        pdf.cell(20, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 2
-        pdf.cell(20, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 3
+        pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 1
+        pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 2
+        pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 3
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
+        pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
         pdf.ln(4.5)
 
     elif format_option == 'Digital Assessment':
