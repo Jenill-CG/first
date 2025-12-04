@@ -37,7 +37,7 @@ parameter_mapping = {
     'A6': "Partner_ID,Block_ID,School_ID,Grade,student_no",
     'A7': "Partner_ID,District_ID,School_ID,Grade,student_no",
     'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no",
-    'A9': "School_ID,Grade,student_no"
+    'A9': "SCHOOL CODE,Grade,student_no"
 }
 
 # Dropdown for selecting file naming format
