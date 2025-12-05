@@ -174,7 +174,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     # Add labels and fill values from the dictionary
     info_labels = {
         'DISTRICT': '',
-        'STATE': 'JH',
+        'STATE': 'Jharkhand',
         'SCHOOL NAME': '',
         'CLASS': '',
         'SCHOOL CODE': ''
