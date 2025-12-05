@@ -244,7 +244,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.ln(4)
         # First row of headers
         pdf.cell(22, 0.5, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(91, 0.5, 'STUDENT NAME', border='LR', align='C')
+        pdf.cell(91, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
         pdf.cell(18, 0.5, 'SUBJECT 1', border='LR', align='C')
         pdf.cell(18, 0.5, 'SUBJECT 2', border='LR', align='C')
@@ -280,7 +280,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.ln(4)
         # First row of headers
         pdf.cell(21, 0.5, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(96, 0.5, 'STUDENT NAME', border='LR', align='C')
+        pdf.cell(96, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
         pdf.cell(18, 0.5, 'TAB ID', border='LR', align='C')
         pdf.cell(16, 0.5, 'SUBJECT 1', border='LR', align='C')
@@ -740,7 +740,7 @@ def main():
         
         # Number of columns and column names for the table based on the selected format
         if format_option == 'Pen Paper Assessment':
-            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3']
+            column_names = ['S.NO', 'STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3']
             column_widths = {
                 'S.NO': 6,
                 'STUDENT ID': 16,
@@ -753,7 +753,7 @@ def main():
                 # 'SECTION': 12
             }
         else:
-            column_names = ['STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2']
+            column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2']
             column_widths = {
                 # 'S.NO': 6,
                 'STUDENT ID': 21,
