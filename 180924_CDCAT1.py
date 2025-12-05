@@ -292,7 +292,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.ln(0.5)
 
         # Second row of headers (merged cells)
-        pdf.set_font("Arial",  size=7)
+        pdf.set_font("Arial",  size=6.5)
         pdf.cell(30, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
         pdf.cell(87, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
         pdf.cell(18, 4.5, '(BOY/GIRL)', border='LBR', align='C')  # Empty cell under GENDER
@@ -305,7 +305,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
 
     # Table Rows (based on student_count)
-    pdf.set_font('Arial', '', 8)
+    pdf.set_font('Arial', '', 6.5)
     student_count = info_values.get('student_count', 0)  # Use 0 if 'student_count' is missing or not found
 
     # Fill in the student IDs for the selected school code
