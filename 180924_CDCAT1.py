@@ -246,9 +246,9 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(22, 0.5, 'STUDENT ID', border='LR', align='C')
         pdf.cell(91, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
-        pdf.cell(18, 0.5, 'SUBJECT 1', border='LR', align='C')
-        pdf.cell(18, 0.5, 'SUBJECT 2', border='LR', align='C')
-        pdf.cell(18, 0.5, 'SUBJECT 3', border='LR', align='C')
+        pdf.cell(18, 0.5, 'PART A', border='LR', align='C')
+        pdf.cell(18, 0.5, 'PART B', border='LR', align='C')
+        pdf.cell(18, 0.5, 'PART C', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
         # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # Move to the next line
@@ -283,8 +283,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(96, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
         pdf.cell(18, 0.5, 'TAB ID', border='LR', align='C')
-        pdf.cell(16, 0.5, 'SUBJECT 1', border='LR', align='C')
-        pdf.cell(16, 0.5, 'SUBJECT 2', border='LR', align='C')
+        pdf.cell(16, 0.5, 'PART A', border='LR', align='C')
+        pdf.cell(16, 0.5, 'PART B', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
 
@@ -740,28 +740,28 @@ def main():
         
         # Number of columns and column names for the table based on the selected format
         if format_option == 'Pen Paper Assessment':
-            column_names = ['S.NO', 'STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3']
+            column_names = ['S.NO', 'STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'PART A', 'PART B', 'PART C']
             column_widths = {
                 'S.NO': 6,
                 'STUDENT ID': 16,
                 'STUDENT FULL NAME': 91,
                 'GENDER': 12,
-                'SUBJECT 1': 18,
-                'SUBJECT 2': 18,
-                'SUBJECT 3': 18
+                'PART A': 18,
+                'PART B': 18,
+                'PART C': 18
                 # 'SESSION': 12,
                 # 'SECTION': 12
             }
         else:
-            column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2']
+            column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'TAB ID', 'PART A', 'PART B']
             column_widths = {
                 # 'S.NO': 6,
                 'STUDENT ID': 21,
                 'STUDENT FULL NAME': 96,
                 'GENDER': 12,
                 'TAB ID': 18,
-                'SUBJECT 1': 16,
-                'SUBJECT 2': 16
+                'PART A': 16,
+                'PART B': 16
                 # 'SECTION': 12,
                 # 'SESSION': 12
             }
