@@ -222,14 +222,10 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.cell(info_cell_width, 3, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
     
-    # pdf.set_font('Arial', '', 8)  # normal text
-    # pdf.cell(info_cell_width, 4, "Everyone should be present in the class for better exp", ln=0)
-
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 5)
-    table_cell_height = 13
+    table_cell_height = 9
 
-    
     # Add the Title and Subtitle in the Center
     if format_option == 'Pen Paper Assessment':
         # Add the Title and Subtitle for pen paper format
@@ -319,7 +315,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     for i in range(student_count):
         # Fill in S.NO column
-        # pdf.cell(column_widths['S.NO'], table_cell_height, str(i + 1), border=1, align='C')
+        pdf.cell(column_widths['S.NO'], table_cell_height, str(i + 1), border=1, align='C')
 
         # Fill in STUDENT ID column
         student_id = student_ids[i]
@@ -519,6 +515,25 @@ def main():
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
+  
+            # partner_id = st.number_input("Partner ID", min_value=12, value=12)
+
+            # col1, col2 = st.columns([1, 3])
+            # with col1:
+            # # Select slider with reduced width placed in the first narrow column
+            #     st.write("Enter values")
+            # #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
+            # with col2:
+            #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
+            
+
+            #buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
+            
+            #buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
+            #buffer_percent =st.radio("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
+            #buffer_percent = st.select_slider("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=0)
+
+            # grade = st.number_input("Grade", min_value=1, value=1)
                 
             # Message in blue color above District ID Digits
             # st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
@@ -740,7 +755,7 @@ def main():
                 'SECTION': 12
             }
         else:
-            column_names = ['STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
+            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
             column_widths = {
                 'S.NO': 6,
                 'STUDENT ID': 15,
