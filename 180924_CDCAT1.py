@@ -319,7 +319,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     for i in range(student_count):
         # Fill in S.NO column
-        pdf.cell(column_widths['S.NO'], table_cell_height, str(i + 1), border=1, align='C')
+        # pdf.cell(column_widths['S.NO'], table_cell_height, str(i + 1), border=1, align='C')
 
         # Fill in STUDENT ID column
         student_id = student_ids[i]
