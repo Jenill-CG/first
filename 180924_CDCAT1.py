@@ -759,10 +759,9 @@ def main():
                 'SECTION': 12
             }
         else:
-            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
+            column_names = ['STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
             column_widths = {
-                'S.NO': 6,
-                'STUDENT ID': 15,
+                'STUDENT ID': 21,
                 'STUDENT NAME': 72,
                 'GENDER': 12,
                 'TAB ID': 18,
