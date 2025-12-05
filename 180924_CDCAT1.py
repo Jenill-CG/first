@@ -295,7 +295,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.set_font("Arial",  size=5)
         pdf.cell(30, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
         pdf.cell(87, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
-        pdf.cell(18, 4.5, '(Boy/Girl)', border='LBR', align='C')  # Empty cell under GENDER
+        pdf.cell(18, 4.5, '(BOY/GIRL)', border='LBR', align='C')  # Empty cell under GENDER
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under TAB ID
         pdf.cell(16, 4.5, '[Present/Absent]', border='LBR', align='C')  # Empty cell under SUBJECT 1
         pdf.cell(16, 4.5, '[Present/Absent]', border='LBR', align='C')  # Empty cell under SUBJECT 2
