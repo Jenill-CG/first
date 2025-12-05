@@ -152,7 +152,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.set_xy(pdf.get_x(), pdf.get_y() - 10)
 
     # Centered Title
-    pdf.cell(merged_cell_width, 4, 'ATTENDANCE LIST', border=0, align='C', ln=2)
+    pdf.cell(merged_cell_width, 4, 'STUDENTS ATTENDANCE LIST', border=0, align='C', ln=2)
 
     # Centered Subtitle
     pdf.set_font('Arial', '', 3)
