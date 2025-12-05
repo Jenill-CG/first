@@ -803,7 +803,7 @@ def main():
                     pdf.set_left_margin(15)
                     pdf.set_right_margin(15)
         
-                    create_attendance_pdf(pdf, column_widths, column_names, image_path, record, df, format_option)
+                    create_attendance_pdf(pdf, column_widths, column_names, record, df, format_option)
         
                     # Save the PDF in the appropriate district folder
                     pdf_path = os.path.join(district_folders[district_name], f'{file_name}.pdf')
