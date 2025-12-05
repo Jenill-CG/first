@@ -298,7 +298,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
         pdf.ln(4.5)
-    # pdf.ln(4.5)
+
 
     # Table Rows (based on student_count)
     pdf.set_font('Arial', '', 6)
@@ -316,7 +316,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(column_widths['STUDENT ID'], table_cell_height, str(student_id), border=1, align='C')
 
         # Fill in remaining columns with empty values
-        for col_name in column_names[2:]:  # Skip first two columns
+        for col_name in column_names[1:]:  # Skip first two columns
             pdf.cell(column_widths[col_name], table_cell_height, '', border=1, align='C')
 
         pdf.ln(table_cell_height)
