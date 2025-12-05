@@ -174,7 +174,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     # Add labels and fill values from the dictionary
     info_labels = {
         'DISTRICT': '',
-        'BLOCK': '',
+        'STATE': 'JH',
         'SCHOOL NAME': '',
         'CLASS': '',
         'SCHOOL CODE': ''
@@ -202,7 +202,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     # Add the DISTRICT, BLOCK, and other labels
     pdf.cell(info_cell_width, 3, f"DISTRICT : {info_labels['DISTRICT']}", border='LR', ln=1)
-    pdf.cell(info_cell_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='LR', ln=1)
+    # pdf.cell(info_cell_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='LR', ln=1)
 
     # Add the SCHOOL NAME
     pdf.cell(school_name_width, 3, f"SCHOOL NAME : {info_labels['SCHOOL NAME']}", border='L', ln=0)  # Left border only
