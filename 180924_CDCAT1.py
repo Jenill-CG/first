@@ -215,8 +215,10 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.set_font('Arial', 'B', 4.5)  # Set to Arial, Italic, size 5
 
     # Add the DATE OF ASSESSMENT on the right side
-    pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')  # Right border only
-
+    # pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')  # Right border only
+    pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", ln=1, align='R')  # Right border only
+    
+    
     # Reset the font back to the original for the remaining labels
     pdf.set_font('Arial', 'B', 5)
 
