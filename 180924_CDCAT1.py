@@ -171,14 +171,12 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.cell(info_cell_width, info_cell_height, '', border='LBR', ln=1)
     pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height)  # Move back to the top of the cell
 
-    chosen_state = st.session_state.selected_state
-    # chosen_state = st.session_state.get("selected_state", None)
-    
+    chosen_state = st.session_state.selected_state  
     # Add labels and fill values from the dictionary
     info_labels = {
         'DISTRICT': '',
         'STATE': chosen_state,
-        'SCHOOL NAME': '',
+        'SCHOOL': '',
         'CLASS': '',
         'SCHOOL CODE': ''
     }
@@ -208,7 +206,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.cell(info_cell_width, 3, f"DISTRICT : {info_labels['DISTRICT']}", border='LR', ln=1)
     
     # Add the SCHOOL NAME
-    pdf.cell(school_name_width, 3, f"SCHOOL NAME : {info_labels['SCHOOL NAME']}", border='L', ln=0)  # Left border only
+    pdf.cell(school_name_width, 3, f"SCHOOL NAME : {info_labels['SCHOOL']}", border='L', ln=0)  # Left border only
 
     # Set a different font for the DATE OF ASSESSMENT
     pdf.set_font('Arial', 'B', 4.5)  # Set to Arial, Italic, size 5
