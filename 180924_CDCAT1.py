@@ -177,8 +177,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         'DISTRICT': '',
         'STATE': chosen_state,
         'SCHOOL': '',
-        'CLASS': '',
-        'UDISE CODE': ''
+        'UDISE CODE': '',        
+        'CLASS': ''
     }
 
     # Prioritize exact matches, but still allow partial matching
