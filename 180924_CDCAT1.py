@@ -280,11 +280,11 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.ln(4)
         # First row of headers
         pdf.cell(26, 0.5, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(87, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
+        pdf.cell(73, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
         pdf.cell(18, 0.5, 'GENDER', border='LR', align='C')
         pdf.cell(16, 0.5, 'SET CODE', border='LR', align='C')
-        pdf.cell(16, 0.5, 'PART A', border='LR', align='C')
-        pdf.cell(16, 0.5, 'PART B', border='LR', align='C')
+        pdf.cell(23, 0.5, 'PART A', border='LR', align='C')
+        pdf.cell(23, 0.5, 'PART B', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
 
@@ -757,11 +757,11 @@ def main():
             column_widths = {
                 # 'S.NO': 6,
                 'STUDENT ID': 26,
-                'STUDENT FULL NAME': 87,
+                'STUDENT FULL NAME': 73,
                 'GENDER': 18,
                 'SET CODE': 16,
-                'PART A': 16,
-                'PART B': 16
+                'PART A': 23,
+                'PART B': 23
                 # 'SECTION': 12,
                 # 'SESSION': 12
             }
