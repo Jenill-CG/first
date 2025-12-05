@@ -115,7 +115,7 @@ def download_link(df, filename, link_text):
     return f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="{filename}" class="download-link"><img src="https://img.icons8.com/material-outlined/24/000000/download.png" class="download-icon"/> {link_text}</a>'
 
 # Function to create the attendance list PDF
-def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_values, df, format_option):
+def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, format_option):
     pdf.add_page()
 
     # Set top margin to 2O mm
