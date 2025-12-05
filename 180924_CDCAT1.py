@@ -40,17 +40,6 @@ parameter_mapping = {
     'A9': "School_udise,Grade,student_no"
 }
 
-# state_descriptions = {
-#     'A1': "Jharkhand",
-#     'A2': "Himachal Pradesh",
-#     'A3': "Uttar Pradesh"
-# }
-# state_mapping = {
-#     'A1': "Jharkhand",
-#     'A2': "Himachal Pradesh",
-#     'A3': "Uttar Pradesh"
-# }
-
 # Dropdown for selecting file naming format
 naming_options = {
     "School Name + Block Name": "{school_name}_{block_name}",
