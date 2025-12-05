@@ -100,10 +100,10 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block']].copy()
     data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'District', 'Block']].copy()
     data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
-    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
+    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'UDISE Code', 'District Name', 'Block Name']
     # Generate Teacher_Codes sheet
     teacher_codes = data[['School', 'School_ID']].copy()
-    teacher_codes.columns = ['School Name', 'School Code']
+    teacher_codes.columns = ['School Name', 'UDISE Code']
     return data_expanded, data_mapped, teacher_codes, data_original_mapped
 
 def download_link(df, filename, link_text):
@@ -177,7 +177,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         'DISTRICT': '',
         'STATE': chosen_state,
         'SCHOOL': '',
-        'SCHOOL CODE': '',        
+        'UDISE CODE': '',        
         'CLASS': ''
     }
 
@@ -219,7 +219,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     # Add the CLASS and SECTION labels
     
-    pdf.cell(info_cell_width, 3, f"SCHOOL CODE : {info_labels['SCHOOL CODE']}", border='LR', ln=1)
+    pdf.cell(info_cell_width, 3, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
     
     # Draw a border around the table header
@@ -311,7 +311,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     student_count = info_values.get('student_count', 0)  # Use 0 if 'student_count' is missing or not found
 
     # Fill in the student IDs for the selected school code
-    student_ids = df[df['School Code'] == info_values.get('School Code', '')]['STUDENT ID'].tolist()
+    student_ids = df[df['UDISE Code'] == info_values.get('UDISE Code', '')]['STUDENT ID'].tolist()
 
     for i in range(student_count):
         # Fill in S.NO column
@@ -594,7 +594,7 @@ def main():
 
 
             # replace with above var
-            st.markdown(f"<p style='color: blue; font-size: small;'>Your School Code format would be: {school_format}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='color: blue; font-size: small;'>Your UDISE Code format would be: {school_format}</p>", unsafe_allow_html=True)
         
         # Generate button action
         if st.session_state['checkboxes_checked']:
@@ -684,7 +684,7 @@ def main():
 
         # Calculating KPIs
         num_students = len(df['STUDENT ID'].unique())
-        num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
+        num_schools = df['UDISE Code'].nunique() if 'UDISE Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
         num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
         
@@ -706,7 +706,7 @@ def main():
         st.markdown(download_link(mapped_data, "Student_Ids.xlsx", "Download Student IDs"), unsafe_allow_html=True)
 
         # Download button for teacher codes
-        st.markdown(download_link(teacher_codes, "School_Codes.xlsx", "Download School Codes"), unsafe_allow_html=True)
+        st.markdown(download_link(teacher_codes, "School_Codes.xlsx", "Download UDISE Codes"), unsafe_allow_html=True)
 
     # if st.session_state['mapped_data'] is not None:
         # Centered title
