@@ -221,11 +221,13 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     
     pdf.cell(info_cell_width, 3, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
-    
+    st.markdown("Everyone should be present in the class for **Better performance**")
+
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 5)
     table_cell_height = 9
 
+    
     # Add the Title and Subtitle in the Center
     if format_option == 'Pen Paper Assessment':
         # Add the Title and Subtitle for pen paper format
