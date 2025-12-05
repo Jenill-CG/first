@@ -182,13 +182,12 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.cell(info_cell_width, info_cell_height, '', border='LBR', ln=1)
     pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height)  # Move back to the top of the cell
 
-    # newtryforstate = selected_state
-    newtryforstate = st.session_state["selected_state"]
+    chosen_state = st.session_state["selected_state"]
 
     # Add labels and fill values from the dictionary
     info_labels = {
         'DISTRICT': '',
-        'STATE': newtryforstate,
+        'STATE': chosen_state,
         'SCHOOL NAME': '',
         'CLASS': '',
         'SCHOOL CODE': ''
@@ -567,15 +566,7 @@ def main():
             # school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
             # student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
 
-            # Display parameter descriptions directly in selectbox
-            # state_options = list(state_descriptions.values())
-            # # st.markdown("""<style>.custom-selectbox-label {color: blue; margin: 0;}</style><p class='custom-selectbox-label'>Please Select Parameter Set for Desired Combination of Student IDs</p>""",unsafe_allow_html=True)
-            # st.markdown("""➡️ Please select the State""",unsafe_allow_html=True)
-            # selected_state_description = st.selectbox("Desired state for Student IDs", state_options)
-
-            # # Get the corresponding parameter key
-            # selected_state = list(state_descriptions.keys())[state_options.index(selected_state_description)]
-            states = ["ABC", "EFG", "GHI"]
+            states = ["Jharkhand", "Himachal Pradesh", "Uttar Pradesh"]
             st.markdown("➡️ Please select the State", unsafe_allow_html=True)
             selected_state = st.selectbox("Desired state for Student IDs", states)
             
