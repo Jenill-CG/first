@@ -221,7 +221,11 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     
     pdf.cell(info_cell_width, 3, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
-    st.markdown("Everyone should be present in the class for **Better performance**")
+    
+    pdf.set_font('Arial', '', 8)  # normal text
+    pdf.cell(info_cell_width, 4, "Everyone should be present in the class for ", ln=0)
+    pdf.set_font('Arial', 'B', 8)  # bold text
+    pdf.cell(0, 4, "Better performance", ln=1)
 
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 5)
