@@ -519,25 +519,6 @@ def main():
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
-  
-            # partner_id = st.number_input("Partner ID", min_value=12, value=12)
-
-            # col1, col2 = st.columns([1, 3])
-            # with col1:
-            # # Select slider with reduced width placed in the first narrow column
-            #     st.write("Enter values")
-            # #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
-            # with col2:
-            #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
-            
-
-            #buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
-            
-            #buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
-            #buffer_percent =st.radio("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
-            #buffer_percent = st.select_slider("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=0)
-
-            # grade = st.number_input("Grade", min_value=1, value=1)
                 
             # Message in blue color above District ID Digits
             # st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
@@ -761,7 +742,8 @@ def main():
         else:
             column_names = ['STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
             column_widths = {
-                'STUDENT ID': 21,
+                'S.NO': 6,
+                'STUDENT ID': 15,
                 'STUDENT NAME': 72,
                 'GENDER': 12,
                 'TAB ID': 18,
