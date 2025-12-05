@@ -198,9 +198,9 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
                     break
 
     # Width for the school name and date of assessment cells
-    # school_name_width = info_cell_width * 0.65  # 65% of the total width for the school name
-    # date_width = info_cell_width * 0.35         # 35% of the total width for the date of assessment
-    school_name_width = info_cell_width   # 65% of the total width for the school name
+    school_name_width = info_cell_width * 0.65  # 65% of the total width for the school name
+    date_width = info_cell_width * 0.35         # 35% of the total width for the date of assessment
+    # school_name_width = info_cell_width   # 65% of the total width for the school name
 
     
     # Add the DISTRICT, BLOCK, and other labels
