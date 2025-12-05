@@ -161,8 +161,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     # Bottom border of the merged cell
     pdf.cell(merged_cell_width, 3, '', border='LBR', ln=1)  # Bottom border of the merged cell
 
-    # Add the image in the top-right corner of the bordered cell
-    pdf.image(image_path, x=pdf.get_x() + 160, y=pdf.get_y() - 8, w=15, h=5.5)  # Adjust position and size as needed
+    # # Add the image in the top-right corner of the bordered cell
+    # pdf.image(image_path, x=pdf.get_x() + 160, y=pdf.get_y() - 8, w=15, h=5.5)  # Adjust position and size as needed
 
     # Add the additional information cell below the "ATTENDANCE LIST" cell
     pdf.set_font('Arial', 'B', 5)
@@ -733,7 +733,7 @@ def main():
         # Display the styled header
         st.markdown("<div class='custom-header'>Attendance Sheet Generator</div>", unsafe_allow_html=True)
 
-        image_path = "https://raw.githubusercontent.com/Jenill-CG/first/main/cg.png"
+        # image_path = "https://raw.githubusercontent.com/Jenill-CG/first/main/cg.png"
 
         # Choose between pen paper format or digital
         format_option = st.radio("➡️ Choose the format for the attendance sheet", ('Digital Assessment','Pen Paper Assessment'))
