@@ -140,7 +140,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.set_y(20)
 
     # Set the Font for the Title and Subtitle
-    pdf.set_font('Arial', 'B', 16)
+    pdf.set_font('Arial', 'B', 14)
 
     # Calculate the Width of the Merged Cell
     merged_cell_width = sum(column_widths[col] for col in column_names)  # Total width based on scaled column widths
@@ -155,8 +155,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.cell(merged_cell_width, 4, 'STUDENTS ATTENDANCE LIST', border=0, align='C', ln=2)
 
     # Centered Subtitle
-    pdf.set_font('Arial', '', 3)
-    pdf.cell(merged_cell_width, 1, '(PLEASE FILL ALL THE DETAILS IN BLOCK LETTERS)', border=0, align='C', ln=1)
+    # pdf.set_font('Arial', '', 3)
+    # pdf.cell(merged_cell_width, 1, '(PLEASE FILL ALL THE DETAILS IN BLOCK LETTERS)', border=0, align='C', ln=1)
 
     # Bottom border of the merged cell
     pdf.cell(merged_cell_width, 3, '', border='LBR', ln=1)  # Bottom border of the merged cell
