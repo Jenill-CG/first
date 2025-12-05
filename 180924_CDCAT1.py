@@ -222,12 +222,12 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.cell(info_cell_width, 3, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
     
-    # pdf.set_font('Arial', '', 8)  # normal text
-    # pdf.cell(info_cell_width, 4, "Everyone should be present in the class for better exp", ln=0)
+    pdf.set_font('Arial', '', 8)  # normal text
+    pdf.cell(info_cell_width, 4, "Everyone should be present in the class for better exp", ln=0)
 
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 5)
-    table_cell_height = 9
+    table_cell_height = 13
 
     
     # Add the Title and Subtitle in the Center
