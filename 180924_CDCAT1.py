@@ -740,7 +740,7 @@ def main():
         
         # Number of columns and column names for the table based on the selected format
         if format_option == 'Pen Paper Assessment':
-            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3', 'SESSION', 'SECTION']
+            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3']
             column_widths = {
                 'S.NO': 6,
                 'STUDENT ID': 16,
