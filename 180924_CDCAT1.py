@@ -182,7 +182,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.cell(info_cell_width, info_cell_height, '', border='LBR', ln=1)
     pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height)  # Move back to the top of the cell
 
-    newtryforstate= selected_state 
+    newtryforstate = selected_state2
     # Add labels and fill values from the dictionary
     info_labels = {
         'DISTRICT': '',
@@ -575,9 +575,7 @@ def main():
             # selected_state = list(state_descriptions.keys())[state_options.index(selected_state_description)]
             states = ["ABC", "EFG", "GHI"]
             st.markdown("➡️ Please select the State", unsafe_allow_html=True)
-            selected_state = st.selectbox("Desired state for Student IDs", states)
-            st.write("You selected:", selected_state)
-
+            selected_state2 = st.selectbox("Desired state for Student IDs", states)
 
             
             # Display parameter descriptions directly in selectbox
