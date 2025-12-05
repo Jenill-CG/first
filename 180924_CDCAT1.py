@@ -171,8 +171,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.cell(info_cell_width, info_cell_height, '', border='LBR', ln=1)
     pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height)  # Move back to the top of the cell
 
-    chosen_state = st.session_state["selected_state"]
-
+    chosen_state = st.session_state.get("selected_state", None)
     # Add labels and fill values from the dictionary
     info_labels = {
         'DISTRICT': '',
