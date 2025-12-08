@@ -172,7 +172,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.cell(merged_cell_width, 1, '', border=0, ln=1)  # Bottom border of the merged cell
 
     # Add the additional information cell below the "ATTENDANCE LIST" cell
-    pdf.set_font('calibri', '', 12)
+    pdf.set_font('arial', '', 12)
     info_cell_width = merged_cell_width  # Width same as the merged title cell
     info_cell_height = 17  # Adjust height as needed
     
@@ -223,7 +223,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     
     pdf.cell(info_cell_width, 2, '', border=0, ln=1)    
     # Draw a border around the table header
-    pdf.set_font('calibri', 'B', 8)
+    pdf.set_font('calibri', 'B', 10)
     table_cell_height = 9
 
     # Add the Title and Subtitle in the Center
@@ -300,7 +300,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
 
     # Table Rows (based on student_count)
-    pdf.set_font('calibri', '', 9)
+    pdf.set_font('calibri', '', 11)
     student_count = info_values.get('student_count', 0)  # Use 0 if 'student_count' is missing or not found
 
     # Fill in the student IDs for the selected school code
