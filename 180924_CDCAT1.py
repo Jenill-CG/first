@@ -269,12 +269,12 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
         # Second row of headers (merged cells)
         pdf.set_font("Arial",  size=6.5)
-        pdf.cell(26, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
-        pdf.cell(73, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
-        pdf.cell(18, 4.5, '(BOY/GIRL)', border='LBR', align='C')  # Empty cell under GENDER
-        pdf.cell(16, 4.5, '', border='LBR', align='C')  # Empty cell under TAB ID
-        pdf.cell(23, 4.5, '[Present/Absent]', border='LBR', align='C')  # Empty cell under SUBJECT 1
-        pdf.cell(23, 4.5, '[Present/Absent]', border='LBR', align='C')  # Empty cell under SUBJECT 2
+        pdf.cell(26, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT ID
+        pdf.cell(73, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
+        pdf.cell(18, 4.5, '(BOY/GIRL)', border='LBR', align='C', fill=True)  # Empty cell under GENDER
+        pdf.cell(16, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under TAB ID
+        pdf.cell(23, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 1
+        pdf.cell(23, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 2
         # pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
         # pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
         pdf.ln(4.5)
