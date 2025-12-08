@@ -168,6 +168,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.set_font('Arial', 'B', 5)
     info_cell_width = merged_cell_width  # Width same as the merged title cell
     info_cell_height = 15  # Adjust height as needed
+    
     pdf.cell(info_cell_width, info_cell_height, '', border='LBR', ln=1)
     pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height)  # Move back to the top of the cell
 
@@ -224,7 +225,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     # Add the CLASS and SECTION labels
     
     pdf.cell(info_cell_width, 3, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
-    pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", ln=1)
+    pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
     
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 8)
