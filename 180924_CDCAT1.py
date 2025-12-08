@@ -192,11 +192,11 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
                     break
 
     # Add the DISTRICT, BLOCK, and other labels
-    pdf.cell(info_cell_width, 5, f"STATE : {info_labels['STATE']}", border=0, ln=1)
-    pdf.cell(info_cell_width, 5, f"DISTRICT : {info_labels['DISTRICT']}", border=0, ln=1)
-    pdf.cell(info_cell_width, 5, f"SCHOOL : {info_labels['SCHOOL']}", border=0, ln=1)     
-    pdf.cell(info_cell_width, 5, f"UDISE CODE : {info_labels['UDISE CODE']}", border=0, ln=1)
-    pdf.cell(info_cell_width, 5, f"CLASS : {info_labels['CLASS']}", border=0, ln=1)
+    pdf.cell(info_cell_width, 8, f"STATE : {info_labels['STATE']}", border=0, ln=1)
+    pdf.cell(info_cell_width, 8, f"DISTRICT : {info_labels['DISTRICT']}", border=0, ln=1)
+    pdf.cell(info_cell_width, 8, f"SCHOOL : {info_labels['SCHOOL']}", border=0, ln=1)     
+    pdf.cell(info_cell_width, 8, f"UDISE CODE : {info_labels['UDISE CODE']}", border=0, ln=1)
+    pdf.cell(info_cell_width, 8, f"CLASS : {info_labels['CLASS']}", border=0, ln=1)
 
     pdf.set_font('Arial', 'I', 8)
     pdf.cell(info_cell_width, 6,"                       All details should be filled by the test administrator in English  BLOCK LETTERS only", border=0, ln=1)
