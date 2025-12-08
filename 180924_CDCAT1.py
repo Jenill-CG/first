@@ -505,7 +505,7 @@ def main():
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
-                grade = st.number_input("Grade", min_value=1, value=3)
+                grade = st.number_input("Grade", min_value=1, value=6)
                  
             # Message in blue color above District ID Digits
             # st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
