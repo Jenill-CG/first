@@ -42,9 +42,10 @@ parameter_mapping = {
 
 # Dropdown for selecting file naming format
 naming_options = {
+    "Grade + Block + UDISE Code": "Grade{grade}_{block_name}_{school_udise_code}",
     "School Name + Grade": "{school_name}_Grade{grade}",
     "School Name + Block Name": "{school_name}_{block_name}",
-    "School Name + District Name": "{school_name}_{district_name}"
+    "School Name + District Name": "{}_{district_name}"
     
 }
 
@@ -764,7 +765,8 @@ def main():
                     district_name = record.get('District Name', 'default_district').replace('/', '|')
                     block_name = record.get('Block Name', 'default_block').replace('/', '|')
                     grade = record.get('CLASS', 'default_grade')
-        
+                    school_udise_code = record.get('School ID', 'XYZ')
+                    
                     file_name = filename_template.format(school_name=school_name, district_name=district_name, block_name=block_name, grade=grade)
         
                     pdf = FPDF(orientation='P', unit='mm', format='A4')
