@@ -154,15 +154,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     # Centered Title
     pdf.cell(merged_cell_width, 5, 'STUDENTS ATTENDANCE SHEET', border=0, align='C', ln=2)
 
-    # Centered Subtitle
-    # pdf.set_font('Arial', '', 3)
-    # pdf.cell(merged_cell_width, 1, '(PLEASE FILL ALL THE DETAILS IN BLOCK LETTERS)', border=0, align='C', ln=1)
-
     # Bottom border of the merged cell
     pdf.cell(merged_cell_width, 3, '', border='B', ln=1)  # Bottom border of the merged cell
-
-    # # Add the image in the top-right corner of the bordered cell
-    # pdf.image(image_path, x=pdf.get_x() + 160, y=pdf.get_y() - 8, w=15, h=5.5)  # Adjust position and size as needed
 
     # Add the additional information cell below the "ATTENDANCE LIST" cell
     pdf.set_font('Arial', 'B', 12)
@@ -170,7 +163,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     info_cell_height = 17  # Adjust height as needed
     
     pdf.cell(info_cell_width, info_cell_height, '', border=0, ln=1)
-    pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height +6)  # Move back to the top of the cell
+    pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height +1 )  # Move back to the top of the cell
 
     chosen_state = st.session_state.selected_state  
     # Add labels and fill values from the dictionary
