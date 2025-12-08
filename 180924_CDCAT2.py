@@ -15,14 +15,14 @@ import plotly.express as px
 import streamlit.components.v1 as components
 
 # Fonts to be used
-pdf.add_font("Calibri", "", "calibri.ttf", uni=True)
-pdf.add_font("Calibri", "B", "calibrib.ttf", uni=True)
-pdf.add_font("Calibri", "I", "calibrii.ttf", uni=True)
-pdf.add_font("Calibri", "BI", "calibriz.ttf", uni=True)
-pdf.add_font("Calibri", "U", "calibri.ttf", uni=True)
-pdf.add_font("Calibri", "BU", "calibrib.ttf", uni=True)
-pdf.add_font("Calibri", "IU", "calibrii.ttf", uni=True)
-pdf.add_font("Calibri", "BIU", "calibriz.ttf", uni=True)
+pdf.add_font("Calibri", "", "fonts/calibri.ttf", uni=True)
+pdf.add_font("Calibri", "B", "fonts/calibrib.ttf", uni=True)
+pdf.add_font("Calibri", "I", "fonts/calibrii.ttf", uni=True)
+pdf.add_font("Calibri", "BI", "fonts/calibriz.ttf", uni=True)
+pdf.add_font("Calibri", "U", "fonts/calibri.ttf", uni=True)
+pdf.add_font("Calibri", "BU", "fonts/calibrib.ttf", uni=True)
+pdf.add_font("Calibri", "IU", "fonts/calibrii.ttf", uni=True)
+pdf.add_font("Calibri", "BIU", "fonts/calibriz.ttf", uni=True)
 
 # Define the parameter descriptions
 parameter_descriptions = {
