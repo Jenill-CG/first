@@ -253,8 +253,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     elif format_option == 'Digital Assessment':
         # Add the Title and Subtitle for digital format
         pdf.cell(30, 3, '', border='LTR', align='C', fill=True )
-        pdf.cell(73, 3, '', border='LTR', align='C', fill=True)
-        pdf.cell(18, 3, '', border='LTR', align='C', fill=True)
+        pdf.cell(75, 3, '', border='LTR', align='C', fill=True)
+        pdf.cell(16, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(16, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(21, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(21, 3, '', border='LTR', align='C', fill=True)
@@ -263,8 +263,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.ln(3)
         # First row of headers
         pdf.cell(30, 2, 'STUDENT ID',  border='LR', align='C', fill=True)
-        pdf.cell(73, 2, 'STUDENT FULL NAME',  border='LR', align='C', fill=True)
-        pdf.cell(18, 2, 'GENDER', border='LR', align='C', fill=True)
+        pdf.cell(75, 2, 'STUDENT FULL NAME',  border='LR', align='C', fill=True)
+        pdf.cell(16, 2, 'GENDER', border='LR', align='C', fill=True)
         pdf.cell(16, 2, 'SET CODE', border='LR', align='C', fill=True)
         pdf.cell(21, 2, 'PART A', border='LR', align='C', fill=True)
         pdf.cell(21, 2, 'PART B', border='LR', align='C', fill=True)
@@ -277,8 +277,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         # Second row of headers (merged cells)
         pdf.set_font("Arial",  size=6.5)
         pdf.cell(30, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT ID
-        pdf.cell(73, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
-        pdf.cell(18, 4.5, '(BOY/GIRL)', border='LBR', align='C', fill=True)  # Empty cell under GENDER
+        pdf.cell(75, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
+        pdf.cell(16, 4.5, '(BOY/GIRL)', border='LBR', align='C', fill=True)  # Empty cell under GENDER
         pdf.cell(16, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under TAB ID
         pdf.cell(21, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 1
         pdf.cell(21, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 2
@@ -715,8 +715,8 @@ def main():
             column_widths = {
                 # 'S.NO': 6,
                 'STUDENT ID': 30,
-                'STUDENT FULL NAME': 73,
-                'GENDER': 18,
+                'STUDENT FULL NAME': 75,
+                'GENDER': 16,
                 'SET CODE': 16,
                 'PART A': 21,
                 'PART B': 21
