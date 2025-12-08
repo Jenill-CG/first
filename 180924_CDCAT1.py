@@ -244,23 +244,23 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
     elif format_option == 'Digital Assessment':
         # Add the Title and Subtitle for digital format
-        pdf.cell(26, 4, '', border='LTR', align='C')
-        pdf.cell(73, 4, '', border='LTR', align='C')
-        pdf.cell(18, 4, '', border='LTR', align='C')
-        pdf.cell(16, 4, '', border='LTR', align='C')
-        pdf.cell(23, 4, '', border='LTR', align='C')
-        pdf.cell(23, 4, '', border='LTR', align='C')
+        pdf.cell(26, 4, '', border='LTR', align='C', fill=True)
+        pdf.cell(73, 4, '', border='LTR', align='C', fill=True)
+        pdf.cell(18, 4, '', border='LTR', align='C', fill=True)
+        pdf.cell(16, 4, '', border='LTR', align='C', fill=True)
+        pdf.cell(23, 4, '', border='LTR', align='C', fill=True)
+        pdf.cell(23, 4, '', border='LTR', align='C', fill=True)
         # pdf.cell(12, 4, '', border='LTR', align='C')
         # pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
 
         pdf.ln(4)
         # First row of headers
-        pdf.cell(26, 0.5, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(73, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
-        pdf.cell(18, 0.5, 'GENDER', border='LR', align='C')
-        pdf.cell(16, 0.5, 'SET CODE', border='LR', align='C')
-        pdf.cell(23, 0.5, 'PART A', border='LR', align='C')
-        pdf.cell(23, 0.5, 'PART B', border='LR', align='C')
+        pdf.cell(26, 0.5, 'STUDENT ID', border='LR', align='C', fill=True)
+        pdf.cell(73, 0.5, 'STUDENT FULL NAME', border='LR', align='C', fill=True)
+        pdf.cell(18, 0.5, 'GENDER', border='LR', align='C', fill=True)
+        pdf.cell(16, 0.5, 'SET CODE', border='LR', align='C', fill=True)
+        pdf.cell(23, 0.5, 'PART A', border='LR', align='C', fill=True)
+        pdf.cell(23, 0.5, 'PART B', border='LR', align='C', fill=True)
         # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
 
