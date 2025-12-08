@@ -137,7 +137,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         column_widths = {col: width * scaling_factor for col, width in column_widths.items()}
 
     # Move to 20 mm from the top
-    pdf.set_y(20)
+    pdf.set_y(11)
 
     # Set the Font for the Title and Subtitle
     pdf.set_font('Arial', 'B', 14)
