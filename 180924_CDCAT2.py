@@ -15,7 +15,7 @@ import plotly.express as px
 import streamlit.components.v1 as components
 
 # Fonts to be used
-pdf.add_font("Calibri", "", "fonts/calibri.ttf", uni=True)
+pdf.add_font("calibri", "", "fonts/calibri.ttf", uni=True)
 pdf.add_font("Calibri", "B", "fonts/calibrib.ttf", uni=True)
 pdf.add_font("Calibri", "I", "fonts/calibrii.ttf", uni=True)
 pdf.add_font("Calibri", "BI", "fonts/calibriz.ttf", uni=True)
