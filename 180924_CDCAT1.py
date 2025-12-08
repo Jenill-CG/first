@@ -767,7 +767,7 @@ def main():
                     grade = record.get('CLASS', 'default_grade')
                     school_udise_code = record.get('School ID', 'XYZ')
                     
-                    file_name = filename_template.format(school_name=school_name, district_name=district_name, block_name=block_name, grade=grade)
+                    file_name = filename_template.format(school_name=school_name, district_name=district_name, block_name=block_name, grade=grade,school_udise_code=school_udise_code)
         
                     pdf = FPDF(orientation='P', unit='mm', format='A4')
                     pdf.set_left_margin(15)
