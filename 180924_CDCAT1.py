@@ -146,10 +146,10 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     merged_cell_width = sum(column_widths[col] for col in column_names)  # Total width based on scaled column widths
 
     # Add the Title and Subtitle in the Center
-    # pdf.cell(merged_cell_width, 12, '', border='LTR', ln=1, align='C')  # Create an empty cell with borders
+    pdf.cell(merged_cell_width, 12, '', border='LTR', ln=1, align='C')  # Create an empty cell with borders
 
     # Set the cursor position back to the beginning of the merged cell
-    pdf.set_xy(pdf.get_x(), pdf.get_y() - 10)
+    pdf.set_xy(pdf.get_x(), pdf.get_y() - 11)
 
     # Centered Title
     pdf.cell(merged_cell_width, 5, 'STUDENTS ATTENDANCE SHEET', border=0, align='C', ln=2)
