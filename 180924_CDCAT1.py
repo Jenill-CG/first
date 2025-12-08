@@ -264,7 +264,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
 
         # Move to the next line
-        pdf.ln(0.5)
+        # pdf.ln(0.5)
 
         # Second row of headers (merged cells)
         pdf.set_font("Arial",  size=6.5)
