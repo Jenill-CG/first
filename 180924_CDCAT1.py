@@ -244,8 +244,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
     elif format_option == 'Digital Assessment':
         # Add the Title and Subtitle for digital format
-        pdf.cell(26, 4, '', border='LTR', align='C', fill=True)
-        pdf.cell(73, 4, '', border='LTR', align='C', fill=True)
+        pdf.cell(26, 4, '', border='LTR', align='C' )
+        pdf.cell(73, 4, '', border='LTR', align='C')
         pdf.cell(18, 4, '', border='LTR', align='C', fill=True)
         pdf.cell(16, 4, '', border='LTR', align='C', fill=True)
         pdf.cell(23, 4, '', border='LTR', align='C', fill=True)
