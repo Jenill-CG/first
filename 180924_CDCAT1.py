@@ -159,7 +159,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     # pdf.cell(merged_cell_width, 1, '(PLEASE FILL ALL THE DETAILS IN BLOCK LETTERS)', border=0, align='C', ln=1)
 
     # Bottom border of the merged cell
-    # pdf.cell(merged_cell_width, 3, '', border='LBR', ln=1)  # Bottom border of the merged cell
+    pdf.cell(merged_cell_width, 3, '', border='B', ln=1)  # Bottom border of the merged cell
 
     # # Add the image in the top-right corner of the bordered cell
     # pdf.image(image_path, x=pdf.get_x() + 160, y=pdf.get_y() - 8, w=15, h=5.5)  # Adjust position and size as needed
