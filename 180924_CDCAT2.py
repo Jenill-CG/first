@@ -124,7 +124,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.set_auto_page_break(auto=True, margin=11)
 
     # Page width and margins
-    page_width = 210  # A4 page width in mm
+    page_width = 198  # A4 page width in mm
     margin_left = 9
     margin_right = 9
     available_width = page_width - margin_left - margin_right
@@ -256,8 +256,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.cell(75, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(16, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(16, 3, '', border='LTR', align='C', fill=True)
-        pdf.cell(21, 3, '', border='LTR', align='C', fill=True)
-        pdf.cell(21, 3, '', border='LTR', align='C', fill=True)
+        pdf.cell(30, 3, '', border='LTR', align='C', fill=True)
+        # pdf.cell(21, 3, '', border='LTR', align='C', fill=True)
         # pdf.cell(12, 4, '', border='LTR', align='C')
         # pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
         pdf.ln(3)
@@ -266,8 +266,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.cell(75, 2, 'STUDENT FULL NAME',  border='LR', align='C', fill=True)
         pdf.cell(16, 2, 'GENDER', border='LR', align='C', fill=True)
         pdf.cell(16, 2, 'SET CODE', border='LR', align='C', fill=True)
-        pdf.cell(21, 2, 'PART A', border='LR', align='C', fill=True)
-        pdf.cell(21, 2, 'PART B', border='LR', align='C', fill=True)
+        pdf.cell(30, 2, 'PART A', border='LR', align='C', fill=True)
+        # pdf.cell(21, 2, 'PART B', border='LR', align='C', fill=True)
         # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
 
@@ -280,8 +280,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.cell(75, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
         pdf.cell(16, 4.5, '(BOY/GIRL)', border='LBR', align='C', fill=True)  # Empty cell under GENDER
         pdf.cell(16, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under TAB ID
-        pdf.cell(21, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 1
-        pdf.cell(21, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 2
+        pdf.cell(30, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 1
+        # pdf.cell(21, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 2
         # pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
         # pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
         pdf.ln(4.5)
@@ -711,15 +711,15 @@ def main():
                 # 'SECTION': 12
             }
         else:
-            column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'SET CODE', 'PART A', 'PART B']
+            column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'SET CODE', 'PRESENRT/ABSENT']
             column_widths = {
                 # 'S.NO': 6,
                 'STUDENT ID': 30,
                 'STUDENT FULL NAME': 75,
                 'GENDER': 16,
                 'SET CODE': 16,
-                'PART A': 21,
-                'PART B': 21
+                'PRESENT/ABSENT': 30
+                # 'PART B': 21
                 # 'SECTION': 12,
                 # 'SESSION': 12
             }
