@@ -153,7 +153,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.add_font("calibri", "BIU", "fonts/calibriz.ttf", uni=True)
     
     # Set the Font for the Title and Subtitle
-    pdf.set_font('calibri', 'B', 14)
+    pdf.set_font('calibri', 'B', 18)
 
     # Calculate the Width of the Merged Cell
     merged_cell_width = sum(column_widths[col] for col in column_names)  # Total width based on scaled column widths
