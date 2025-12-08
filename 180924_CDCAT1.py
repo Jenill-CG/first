@@ -119,8 +119,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.add_page()
 
     # Set top margin to 2O mm
-    pdf.set_top_margin(20)
-    pdf.set_auto_page_break(auto=True, margin=20)
+    pdf.set_top_margin(18)
+    pdf.set_auto_page_break(auto=True, margin=18)
 
     # Page width and margins
     page_width = 210  # A4 page width in mm
