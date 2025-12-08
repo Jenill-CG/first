@@ -75,17 +75,20 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     data['Partner_ID'] = str(partner_id).zfill(len(str(partner_id)))  # Padding Partner_ID
     data['Grade'] = grade
     # Assign unique IDs for District, Block, and School, default to "00" for missing values
-    # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
-    data['School_udise'] = data['School_ID']
+    data['School_udise'] = data['School_ID'].astype(str).str.zfill(11)
+    # data['School_udise'] = data['School_ID']
     data['District_ID'] = data['District'].apply(lambda x: str(data['District'].unique().tolist().index(x) + 1).zfill(district_digits) if x != "NA" else "0".zfill(district_digits))
     data['Block_ID'] = data['Block'].apply(lambda x: str(data['Block'].unique().tolist().index(x) + 1).zfill(block_digits) if x != "NA" else "0".zfill(block_digits))
-    # data['School_ID'] = data['School_ID'].apply(lambda x: str(data['School_ID'].unique().tolist().index(x) + 1).zfill(school_digits) if x != "NA" else "0".zfill(school_digits))
-    data['School_ID'] = data['School_ID'].apply(    lambda x: (
-        str(data['School_ID'].unique().tolist().index(x) + 1).zfill(11)
-        if x != "NA"
-        else "0".zfill(11)))
+    
+    data['School_ID'] = data['School_ID'].apply(lambda x: str(data['School_ID'].unique().tolist().index(x) + 1).zfill(school_digits) if x != "NA" else "0".zfill(school_digits))
+    # data['School_ID'] = data['School_ID'].apply(    lambda x: (
+    #     str(data['School_ID'].unique().tolist().index(x) + 1).zfill(11)
+    #     if x != "NA"
+    #     else "0".zfill(11)))
+    
     # Calculate Total Students With Buffer based on the provided buffer percentage
     data['Total_Students_With_Buffer'] = np.floor(data['Total_Students'] * (1 + buffer_percent / 100))
+    
     # Generate student IDs based on the calculated Total Students With Buffer
     def generate_student_ids(row):
         if pd.notna(row['Total_Students_With_Buffer']) and row['Total_Students_With_Buffer'] > 0:
@@ -96,17 +99,22 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
             return student_ids
         return []
     data['Student_IDs'] = data.apply(generate_student_ids, axis=1)
+    
     # Expand the data frame to have one row per student ID
     data_expanded = data.explode('Student_IDs')
+    
     # Extract student number from the ID
     data_expanded['student_no'] = data_expanded['Student_IDs'].str[-student_digits:]
+    
     # Use the selected parameter set for generating Custom_ID
     data_expanded['Custom_ID'] = data_expanded.apply(lambda row: generate_custom_id(row, parameter_mapping[selected_param]), axis=1)
+    
     # Generate the additional Excel sheets with mapped columns (without the Gender column)
     data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block']].copy()
     data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'District', 'Block']].copy()
     data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
     data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'UDISE Code', 'District Name', 'Block Name']
+    
     # Generate Teacher_Codes sheet
     teacher_codes = data[['School', 'School_ID']].copy()
     teacher_codes.columns = ['School Name', 'UDISE Code']
