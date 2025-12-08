@@ -254,8 +254,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         # pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
         pdf.ln(4)
         # First row of headers
-        pdf.cell(26, 0.5, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(73, 0.5, 'STUDENT FULL NAME', border='LR', align='C')
+        pdf.cell(26, 0.5, 'STUDENT ID', border='LR', align='C', fill=True)
+        pdf.cell(73, 0.5, 'STUDENT FULL NAME', border='LR', align='C', fill=True)
         pdf.cell(18, 0.5, 'GENDER', border='LR', align='C', fill=True)
         pdf.cell(16, 0.5, 'SET CODE', border='LR', align='C', fill=True)
         pdf.cell(23, 0.5, 'PART A', border='LR', align='C', fill=True)
