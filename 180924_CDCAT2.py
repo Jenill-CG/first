@@ -14,15 +14,7 @@ import folium
 import plotly.express as px
 import streamlit.components.v1 as components
 
-# Fonts to be used
-pdf.add_font("calibri", "", "fonts/calibri.ttf", uni=True)
-pdf.add_font("Calibri", "B", "fonts/calibrib.ttf", uni=True)
-pdf.add_font("Calibri", "I", "fonts/calibrii.ttf", uni=True)
-pdf.add_font("Calibri", "BI", "fonts/calibriz.ttf", uni=True)
-pdf.add_font("Calibri", "U", "fonts/calibri.ttf", uni=True)
-pdf.add_font("Calibri", "BU", "fonts/calibrib.ttf", uni=True)
-pdf.add_font("Calibri", "IU", "fonts/calibrii.ttf", uni=True)
-pdf.add_font("Calibri", "BIU", "fonts/calibriz.ttf", uni=True)
+
 
 # Define the parameter descriptions
 parameter_descriptions = {
@@ -128,7 +120,7 @@ def download_link(df, filename, link_text):
 # Function to create the attendance list PDF
 def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, format_option):
     pdf.add_page()
-
+    
     # Set top margin to 2O mm
     pdf.set_top_margin(11)
     pdf.set_auto_page_break(auto=True, margin=11)
@@ -150,8 +142,18 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     # Move to 20 mm from the top
     pdf.set_y(11)
 
+    # Fonts to be used
+    pdf.add_font("calibri", "", "fonts/calibri.ttf", uni=True)
+    pdf.add_font("calibri", "B", "fonts/calibrib.ttf", uni=True)
+    pdf.add_font("calibri", "I", "fonts/calibrii.ttf", uni=True)
+    pdf.add_font("calibri", "BI", "fonts/calibriz.ttf", uni=True)
+    pdf.add_font("calibri", "U", "fonts/calibri.ttf", uni=True)
+    pdf.add_font("calibri", "BU", "fonts/calibrib.ttf", uni=True)
+    pdf.add_font("calibri", "IU", "fonts/calibrii.ttf", uni=True)
+    pdf.add_font("calibri", "BIU", "fonts/calibriz.ttf", uni=True)
+    
     # Set the Font for the Title and Subtitle
-    pdf.set_font('Calibri', 'B', 14)
+    pdf.set_font('calibri', 'B', 14)
 
     # Calculate the Width of the Merged Cell
     merged_cell_width = sum(column_widths[col] for col in column_names)  # Total width based on scaled column widths
