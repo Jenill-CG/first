@@ -198,33 +198,13 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
                     info_labels[label] = value
                     break
 
-    # Width for the school name and date of assessment cells
-    # school_name_width = info_cell_width * 0.65  # 65% of the total width for the school name
-    # date_width = info_cell_width * 0.35         # 35% of the total width for the date of assessment
-    # school_name_width = info_cell_width   # 65% of the total width for the school name
-    
     # Add the DISTRICT, BLOCK, and other labels
     pdf.cell(info_cell_width, 3, f"STATE : {info_labels['STATE']}", border=0, ln=1)
     pdf.cell(info_cell_width, 3, f"DISTRICT : {info_labels['DISTRICT']}", border=0, ln=1)
-    # Add the SCHOOL NAME
-    # pdf.cell(school_name_width, 3, f"SCHOOL : {info_labels['SCHOOL']}",border=0, ln=0)  # Left border only
-    pdf.cell(info_cell_width, 3, f"SCHOOL : {info_labels['SCHOOL']}", border=0, ln=1)  # Left border only
-
-    # Set a different font for the DATE OF ASSESSMENT
-    # pdf.set_font('Arial', 'B', 4.5)  # Set to Arial, Italic, size 5
-
-    # Add the DATE OF ASSESSMENT on the right side
-    # pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')  # Right border only
-    # pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", ln=1, align='R')  # Right border only
-    
-    
-    # Reset the font back to the original for the remaining labels
-    # pdf.set_font('Arial', 'B', 5)
-
-    # Add the CLASS and SECTION labels
-    
+    pdf.cell(info_cell_width, 3, f"SCHOOL : {info_labels['SCHOOL']}", border=0, ln=1)     
     pdf.cell(info_cell_width, 3, f"UDISE CODE : {info_labels['UDISE CODE']}", border=0, ln=1)
     pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border=0, ln=1)
+    pdf.cell(info_cell_width, 3,"Hellow!", border=0, ln=1)
     
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 8)
