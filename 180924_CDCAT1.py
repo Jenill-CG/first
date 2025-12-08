@@ -219,16 +219,16 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         # pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
         pdf.ln(4)
         # First row of headers
-        pdf.cell(22, 2, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(91, 2, 'STUDENT FULL NAME', border='LR', align='C')
-        pdf.cell(12, 2, 'GENDER', border='LR', align='C')
-        pdf.cell(18, 2, 'PART A', border='LR', align='C')
-        pdf.cell(18, 2, 'PART B', border='LR', align='C')
-        pdf.cell(18, 2, 'PART C', border='LR', align='C')
+        pdf.cell(22, 4, 'STUDENT ID', border='LR', align='C')
+        pdf.cell(91, 4, 'STUDENT FULL NAME', border='LR', align='C')
+        pdf.cell(12, 4, 'GENDER', border='LR', align='C')
+        pdf.cell(18, 4, 'PART A', border='LR', align='C')
+        pdf.cell(18, 4, 'PART B', border='LR', align='C')
+        pdf.cell(18, 4, 'PART C', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
         # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # Move to the next line
-        pdf.ln(2)
+        pdf.ln(4)
 
         # Second row of headers (merged cells)
         pdf.set_font("Arial",  size=5)
