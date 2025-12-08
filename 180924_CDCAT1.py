@@ -219,7 +219,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     
     
     # Reset the font back to the original for the remaining labels
-    pdf.set_font('Arial', 'B', 5)
+    # pdf.set_font('Arial', 'B', 5)
 
     # Add the CLASS and SECTION labels
     
