@@ -216,7 +216,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
     # Add the DATE OF ASSESSMENT on the right side
     # pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')  # Right border only
-    pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", ln=1, align='R')  # Right border only
+    # pdf.cell(date_width, 3, "DATE OF ASSESSMENT : ______________                       ", ln=1, align='R')  # Right border only
     
     
     # Reset the font back to the original for the remaining labels
