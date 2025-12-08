@@ -208,7 +208,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.cell(info_cell_width, 3, f"DISTRICT : {info_labels['DISTRICT']}", border='LR', ln=1)
     
     # Add the SCHOOL NAME
-    # pdf.cell(school_name_width, 3, f"SCHOOL : {info_labels['SCHOOL']}", border='L', ln=0)  # Left border only
+    # pdf.cell(school_name_width, 3, f"SCHOOL : {info_labels['SCHOOL']}", ln=0)  # Left border only
     pdf.cell(info_cell_width, 3, f"SCHOOL : {info_labels['SCHOOL']}", border='L', ln=0)  # Left border only
 
     # Set a different font for the DATE OF ASSESSMENT
