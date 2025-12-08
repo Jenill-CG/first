@@ -42,7 +42,7 @@ parameter_mapping = {
 
 # Dropdown for selecting file naming format
 naming_options = {
-    "Grade + Block + UDISE Code": "Grade{grade}_{block_name}_{school_udise_code}",
+    "Grade + Block + UDISE Code": "Grade{grade}_{block_name}_{School_udise}",
     "School Name + Grade": "{school_name}_Grade{grade}",
     "School Name + Block Name": "{school_name}_{block_name}",
     "School Name + District Name": "{}_{district_name}"
