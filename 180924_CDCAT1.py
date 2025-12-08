@@ -42,9 +42,10 @@ parameter_mapping = {
 
 # Dropdown for selecting file naming format
 naming_options = {
+    "School Name + Grade": "{school_name}_Grade{grade}",
     "School Name + Block Name": "{school_name}_{block_name}",
-    "School Name + District Name": "{school_name}_{district_name}",
-    "School Name + Grade": "{school_name}_Grade{grade}"
+    "School Name + District Name": "{school_name}_{district_name}"
+    
 }
 
 def generate_custom_id(row, params):
