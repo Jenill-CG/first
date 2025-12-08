@@ -167,9 +167,9 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     # Add the additional information cell below the "ATTENDANCE LIST" cell
     pdf.set_font('Arial', 'B', 8)
     info_cell_width = merged_cell_width  # Width same as the merged title cell
-    info_cell_height = 21  # Adjust height as needed
+    info_cell_height = 17  # Adjust height as needed
     
-    # pdf.cell(info_cell_width, info_cell_height, '', border='B', ln=1)
+    pdf.cell(info_cell_width, info_cell_height, '', border='B', ln=1)
     pdf.set_xy(pdf.get_x(), pdf.get_y() - info_cell_height +6)  # Move back to the top of the cell
 
     chosen_state = st.session_state.selected_state  
