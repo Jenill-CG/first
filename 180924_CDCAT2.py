@@ -14,6 +14,16 @@ import folium
 import plotly.express as px
 import streamlit.components.v1 as components
 
+# Fonts to be used
+pdf.add_font("Calibri", "", "calibri.ttf", uni=True)
+pdf.add_font("Calibri", "B", "calibrib.ttf", uni=True)
+pdf.add_font("Calibri", "I", "calibrii.ttf", uni=True)
+pdf.add_font("Calibri", "BI", "calibriz.ttf", uni=True)
+pdf.add_font("Calibri", "U", "calibri.ttf", uni=True)
+pdf.add_font("Calibri", "BU", "calibrib.ttf", uni=True)
+pdf.add_font("Calibri", "IU", "calibrii.ttf", uni=True)
+pdf.add_font("Calibri", "BIU", "calibriz.ttf", uni=True)
+
 # Define the parameter descriptions
 parameter_descriptions = {
     'A1': "School UDISE + Grade + Student",
@@ -141,7 +151,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.set_y(11)
 
     # Set the Font for the Title and Subtitle
-    pdf.set_font('Arial', 'B', 14)
+    pdf.set_font('Calibri', 'B', 14)
 
     # Calculate the Width of the Merged Cell
     merged_cell_width = sum(column_widths[col] for col in column_names)  # Total width based on scaled column widths
