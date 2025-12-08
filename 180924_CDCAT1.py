@@ -252,22 +252,22 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
     elif format_option == 'Digital Assessment':
         # Add the Title and Subtitle for digital format
-        pdf.cell(26, 3, '', border='LTR', align='C', fill=True )
+        pdf.cell(30, 3, '', border='LTR', align='C', fill=True )
         pdf.cell(73, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(18, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(16, 3, '', border='LTR', align='C', fill=True)
-        pdf.cell(23, 3, '', border='LTR', align='C', fill=True)
-        pdf.cell(23, 3, '', border='LTR', align='C', fill=True)
+        pdf.cell(21, 3, '', border='LTR', align='C', fill=True)
+        pdf.cell(21, 3, '', border='LTR', align='C', fill=True)
         # pdf.cell(12, 4, '', border='LTR', align='C')
         # pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
         pdf.ln(3)
         # First row of headers
-        pdf.cell(26, 2, 'STUDENT ID',  border='LR', align='C', fill=True)
+        pdf.cell(30, 2, 'STUDENT ID',  border='LR', align='C', fill=True)
         pdf.cell(73, 2, 'STUDENT FULL NAME',  border='LR', align='C', fill=True)
         pdf.cell(18, 2, 'GENDER', border='LR', align='C', fill=True)
         pdf.cell(16, 2, 'SET CODE', border='LR', align='C', fill=True)
-        pdf.cell(23, 2, 'PART A', border='LR', align='C', fill=True)
-        pdf.cell(23, 2, 'PART B', border='LR', align='C', fill=True)
+        pdf.cell(21, 2, 'PART A', border='LR', align='C', fill=True)
+        pdf.cell(21, 2, 'PART B', border='LR', align='C', fill=True)
         # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         # pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
 
@@ -276,12 +276,12 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
         # Second row of headers (merged cells)
         pdf.set_font("Arial",  size=6.5)
-        pdf.cell(26, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT ID
+        pdf.cell(30, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT ID
         pdf.cell(73, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
         pdf.cell(18, 4.5, '(BOY/GIRL)', border='LBR', align='C', fill=True)  # Empty cell under GENDER
         pdf.cell(16, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under TAB ID
-        pdf.cell(23, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 1
-        pdf.cell(23, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 2
+        pdf.cell(21, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 1
+        pdf.cell(21, 4.5, '[Present/Absent]', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 2
         # pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
         # pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
         pdf.ln(4.5)
@@ -496,26 +496,7 @@ def main():
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=3)
-  
-            # partner_id = st.number_input("Partner ID", min_value=12, value=12)
-
-            # col1, col2 = st.columns([1, 3])
-            # with col1:
-            # # Select slider with reduced width placed in the first narrow column
-            #     st.write("Enter values")
-            # #value = st.select_slider("Select a value",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=50)
-            # with col2:
-            #     buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
-            
-
-            #buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
-            
-            #buffer_percent =st.slider("Buffer Percentage",min_value=0,max_value=50,value=(0, 50),step=5)
-            #buffer_percent =st.radio("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
-            #buffer_percent = st.select_slider("Buffer Percentage",options=[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],value=0)
-
-            # grade = st.number_input("Grade", min_value=1, value=1)
-                
+                 
             # Message in blue color above District ID Digits
             # st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Digits", unsafe_allow_html=True)
@@ -529,12 +510,6 @@ def main():
                 school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
             with col4:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=3)
-
-
-            # district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
-            # block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
-            # school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
-            # student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
 
             states = ["JHARKHAND", "HIMACHAL PRADESH", "UTTAR PRADESH"]
             st.markdown("➡️ Please select the State", unsafe_allow_html=True)
@@ -739,12 +714,12 @@ def main():
             column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'SET CODE', 'PART A', 'PART B']
             column_widths = {
                 # 'S.NO': 6,
-                'STUDENT ID': 26,
+                'STUDENT ID': 30,
                 'STUDENT FULL NAME': 73,
                 'GENDER': 18,
                 'SET CODE': 16,
-                'PART A': 23,
-                'PART B': 23
+                'PART A': 21,
+                'PART B': 21
                 # 'SECTION': 12,
                 # 'SESSION': 12
             }
