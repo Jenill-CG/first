@@ -140,8 +140,18 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     # Move to 20 mm from the top
     pdf.set_y(11)
 
+    # Fonts to be used
+    pdf.add_font("calibri", "", "fonts/calibri.ttf", uni=True)
+    pdf.add_font("calibri", "B", "fonts/calibrib.ttf", uni=True)
+    pdf.add_font("calibri", "I", "fonts/calibrii.ttf", uni=True)
+    pdf.add_font("calibri", "BI", "fonts/calibriz.ttf", uni=True)
+    pdf.add_font("calibri", "U", "fonts/calibri.ttf", uni=True)
+    pdf.add_font("calibri", "BU", "fonts/calibrib.ttf", uni=True)
+    pdf.add_font("calibri", "IU", "fonts/calibrii.ttf", uni=True)
+    pdf.add_font("calibri", "BIU", "fonts/calibriz.ttf", uni=True)
+    
     # Set the Font for the Title and Subtitle
-    pdf.set_font('Arial', 'B', 14)
+    pdf.set_font('calibri', 'B', 18)
 
     # Calculate the Width of the Merged Cell
     merged_cell_width = sum(column_widths[col] for col in column_names)  # Total width based on scaled column widths
@@ -211,7 +221,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     
     pdf.cell(info_cell_width, 2, '', border=0, ln=1)    
     # Draw a border around the table header
-    pdf.set_font('Arial', 'B', 8)
+    pdf.set_font('calibri', 'B', 10)
     table_cell_height = 9
 
     # Add the Title and Subtitle in the Center
@@ -275,7 +285,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.ln(2)
 
         # Second row of headers (merged cells)
-        pdf.set_font("Arial",  size=6.5)
+        pdf.set_font("calibri",  size=6.5)
         pdf.cell(30, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT ID
         pdf.cell(75, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
         pdf.cell(16, 4.5, '(BOY/GIRL)', border='LBR', align='C', fill=True)  # Empty cell under GENDER
@@ -288,7 +298,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
 
     # Table Rows (based on student_count)
-    pdf.set_font('Arial', '', 9)
+    pdf.set_font('calibri', '', 11)
     student_count = info_values.get('student_count', 0)  # Use 0 if 'student_count' is missing or not found
 
     # Fill in the student IDs for the selected school code
