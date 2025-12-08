@@ -265,7 +265,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     elif format_option == 'Digital Assessment':
         # Add the Title and Subtitle for digital format
         pdf.cell(34, 3, '', border='LTR', align='C', fill=True )
-        pdf.cell(80, 3, '', border='LTR', align='C', fill=True)
+        pdf.cell(83, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(16, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(16, 3, '', border='LTR', align='C', fill=True)
         pdf.cell(30, 3, '', border='LTR', align='C', fill=True)
@@ -275,7 +275,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         pdf.ln(3)
         # First row of headers
         pdf.cell(34, 2.5, 'STUDENT ID',  border='LR', align='C', fill=True)
-        pdf.cell(80, 2.5, 'STUDENT FULL NAME',  border='LR', align='C', fill=True)
+        pdf.cell(83, 2.5, 'STUDENT FULL NAME',  border='LR', align='C', fill=True)
         pdf.cell(16, 2.5, 'GENDER', border='LR', align='C', fill=True)
         pdf.cell(16, 2.5, 'SET CODE', border='LR', align='C', fill=True)
         pdf.cell(30, 2.5, 'PRESENT/ABSENT', border='LR', align='C', fill=True)
@@ -289,7 +289,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
         # Second row of headers (merged cells)
         pdf.set_font("calibri",  size=6.5)
         pdf.cell(34, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT ID
-        pdf.cell(80, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
+        pdf.cell(83, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under STUDENT NAME
         pdf.cell(16, 4.5, '(BOY/GIRL)', border='LBR', align='C', fill=True)  # Empty cell under GENDER
         pdf.cell(16, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under TAB ID
         pdf.cell(30, 4.5, '', border='LBR', align='C', fill=True)  # Empty cell under SUBJECT 1
@@ -727,7 +727,7 @@ def main():
             column_widths = {
                 # 'S.NO': 6,
                 'STUDENT ID': 34,
-                'STUDENT FULL NAME': 80,
+                'STUDENT FULL NAME': 83,
                 'GENDER': 16,
                 'SET CODE': 16,
                 'PRESENT/ABSENT': 30
