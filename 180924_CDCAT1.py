@@ -149,7 +149,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.cell(merged_cell_width, 12, '', border='LTR', ln=1, align='C')  # Create an empty cell with borders
 
     # Set the cursor position back to the beginning of the merged cell
-    pdf.set_xy(pdf.get_x(), pdf.get_y() - 7)
+    pdf.set_xy(pdf.get_x(), pdf.get_y() - 8.5)
 
     # Centered Title
     pdf.cell(merged_cell_width, 5, 'STUDENTS ATTENDANCE SHEET', border=0, align='C', ln=2)
