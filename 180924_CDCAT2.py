@@ -711,7 +711,7 @@ def main():
                 # 'SECTION': 12
             }
         else:
-            column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'SET CODE', 'PRESENRT/ABSENT']
+            column_names = ['STUDENT ID', 'STUDENT FULL NAME', 'GENDER', 'SET CODE', 'PRESENT/ABSENT']
             column_widths = {
                 # 'S.NO': 6,
                 'STUDENT ID': 30,
