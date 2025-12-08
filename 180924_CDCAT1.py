@@ -229,7 +229,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 8)
-    table_cell_height = 12
+    table_cell_height = 9
 
     # Add the Title and Subtitle in the Center
     if format_option == 'Pen Paper Assessment':
