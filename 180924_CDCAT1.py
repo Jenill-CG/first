@@ -202,8 +202,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
     pdf.set_font('Arial', 'I', 10)
     pdf.cell(info_cell_width*0.51, 6,"        All details should be filled by the test administrator in ", border=0, ln=0)
     pdf.cell(info_cell_width*0.10, 6,"English ", border=0, ln=0,align="L")
-    pdf.cell(info_cell_width*0.15, 6," BLOCK LETTERS", border=0, ln=0,align="L")
-    pdf.cell(info_cell_width*0.24, 6,"only", border=0, ln=1, align="L")
+    pdf.cell(info_cell_width*0.18, 6," BLOCK LETTERS", border=0, ln=0,align="L")
+    pdf.cell(info_cell_width*0.21, 6,"only", border=0, ln=1, align="L")
     
     pdf.cell(info_cell_width, 2, '', border=0, ln=1)    
     # Draw a border around the table header
