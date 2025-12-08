@@ -16,7 +16,7 @@ import streamlit.components.v1 as components
 
 # Define the parameter descriptions
 parameter_descriptions = {
-    'A1': "School + Grade + Student",
+    'A1': "School UDISE + Grade + Student",
     'A2': "Block + School + Grade + Student",
     'A3': "District + School + Grade + Student",
     'A4': "Partner + School + Grade + Student",
@@ -24,12 +24,12 @@ parameter_descriptions = {
     'A6': "Partner + Block + School + Grade + Student",
     'A7': "Partner + District + School + Grade + Student",
     'A8': "Partner + District + Block + School + Grade + Student",
-    'A9': "School UDISE + Grade + Student"
+    'A9': "School + Grade + Student"
 }
 
 # Define the new mapping for parameter sets
 parameter_mapping = {
-    'A1': "School_ID,Grade,student_no",
+    'A1': "School_udise,Grade,student_no",
     'A2': "Block_ID,School_ID,Grade,student_no",
     'A3': "District_ID,School_ID,Grade,student_no",
     'A4': "Partner_ID,School_ID,Grade,student_no",
@@ -37,7 +37,7 @@ parameter_mapping = {
     'A6': "Partner_ID,Block_ID,School_ID,Grade,student_no",
     'A7': "Partner_ID,District_ID,School_ID,Grade,student_no",
     'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no",
-    'A9': "School_udise,Grade,student_no"
+    'A9': "School_ID,Grade,student_no"
 }
 
 # Dropdown for selecting file naming format
@@ -494,7 +494,7 @@ def main():
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
-                grade = st.number_input("Grade", min_value=1, value=1)
+                grade = st.number_input("Grade", min_value=1, value=3)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
@@ -527,7 +527,7 @@ def main():
             with col3:
                 school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
             with col4:
-                student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
+                student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=3)
 
 
             # district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
