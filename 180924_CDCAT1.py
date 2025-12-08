@@ -153,7 +153,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, info_values, df, for
 
     # Centered Title
     pdf.set_fill_color(216, 216, 216)
-    pdf.cell(merged_cell_width, 5, 'STUDENTS ATTENDANCE SHEET', border=0, align='C', ln=2, fill=True)
+    pdf.cell(merged_cell_width, 10, 'STUDENTS ATTENDANCE SHEET', border=0, align='C', ln=2, fill=True)
 
     # Bottom border of the merged cell
     pdf.cell(merged_cell_width, 3, '', border='B', ln=1)  # Bottom border of the merged cell
