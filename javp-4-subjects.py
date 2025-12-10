@@ -226,39 +226,39 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     if format_option == 'Pen Paper Assessment':
         # Add the Title and Subtitle for pen paper format
         pdf.cell(6, 4, '', border='LTR', align='C')
-        pdf.cell(16, 4, '', border='LTR', align='C')
-        pdf.cell(67, 4, '', border='LTR', align='C')
+        pdf.cell(14, 4, '', border='LTR', align='C')
+        pdf.cell(64, 4, '', border='LTR', align='C')
         pdf.cell(12, 4, '', border='LTR', align='C')
         pdf.cell(18, 4, '', border='LTR', align='C')
         pdf.cell(18, 4, '', border='LTR', align='C')
         pdf.cell(18, 4, '', border='LTR', align='C')
-        pdf.cell(12, 4, '', border='LTR', align='C')  
-        pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
+        pdf.cell(18, 4, '', border='LTR', align='C')  
+        pdf.cell(10, 4, '', border='LTR', align='C')  # End of the row
         pdf.ln(4)
         # First row of headers
         pdf.cell(6, 0.5, 'S.NO', border='LR', align='C')
-        pdf.cell(16, 0.5, 'STUDENT ID', border='LR', align='C')
-        pdf.cell(67, 0.5, 'STUDENT NAME', border='LR', align='C')
+        pdf.cell(14, 0.5, 'STUDENT ID', border='LR', align='C')
+        pdf.cell(64, 0.5, 'STUDENT NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
         pdf.cell(18, 0.5, 'SUBJECT 1', border='LR', align='C')
         pdf.cell(18, 0.5, 'SUBJECT 2', border='LR', align='C')
         pdf.cell(18, 0.5, 'SUBJECT 3', border='LR', align='C')
-        pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
-        pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
+        pdf.cell(18, 0.5, 'SUBJECT 4', border='LR', align='C')  # End of the row
+        pdf.cell(10, 0.5, 'SECTION', border='LR', align='C')
         # Move to the next line
         pdf.ln(0.5)
 
         # Second row of headers (merged cells)
         pdf.set_font("Arial",  size=5)
         pdf.cell(6, 4.5, '', border='LBR', align='C')  # Empty cell under S.NO
-        pdf.cell(16, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
-        pdf.cell(67, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
+        pdf.cell(14, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
+        pdf.cell(64, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under GENDER
         pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 1
         pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 2
         pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 3
-        pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
-        pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
+        pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SESSION
+        pdf.cell(10, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
         pdf.ln(4.5)
 
     elif format_option == 'Digital Assessment':
@@ -730,21 +730,21 @@ def main():
         image_path = "https://raw.githubusercontent.com/Jenill-CG/first/main/cg.png"
 
         # Choose between pen paper format or digital
-        format_option = st.radio("➡️ Choose the format for the attendance sheet", ('Digital Assessment','Pen Paper Assessment'))
+        format_option = st.radio("➡️ Choose the format for the attendance sheet", ('Pen Paper Assessment','Digital Assessment'))
         
         # Number of columns and column names for the table based on the selected format
         if format_option == 'Pen Paper Assessment':
-            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3', 'SESSION', 'SECTION']
+            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2', 'SUBJECT 3', 'SUBJECT 4', 'SECTION']
             column_widths = {
                 'S.NO': 6,
-                'STUDENT ID': 16,
-                'STUDENT NAME': 67,
+                'STUDENT ID': 14,
+                'STUDENT NAME': 64,
                 'GENDER': 12,
                 'SUBJECT 1': 18,
                 'SUBJECT 2': 18,
                 'SUBJECT 3': 18,
-                'SESSION': 12,
-                'SECTION': 12
+                'SUBJECT 4': 18,
+                'SECTION': 10
             }
         else:
             column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
