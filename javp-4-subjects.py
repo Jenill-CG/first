@@ -200,7 +200,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     # Add the DISTRICT, BLOCK, and other labels
     pdf.cell(info_cell_width, 3, f"DISTRICT : {info_labels['DISTRICT']}", border='LR', ln=1)
-    pdf.cell(school_name_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='LR', ln=0)
+    pdf.cell(school_name_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='L', ln=0)
 
     # Set a different font for the DATE OF ASSESSMENT
     pdf.set_font('Arial', 'B', 4.5)  # Set to Arial, Italic, size 5
@@ -218,7 +218,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     # Set a different font for the total present students
     pdf.set_font('Arial', 'B', 4.5)  # Set to Arial, Italic, size 5
-    pdf.cell(date_width, 3, "TOTAL PRESENT STUDENTS : ______________                  ", border='R', ln=1, align='R')
+    pdf.cell(date_width, 3, "TOTAL PRESENT STUDENTS : ______________                       ", border='R', ln=1, align='R')
 
     # Add the SCHOOL CODE labels
     
