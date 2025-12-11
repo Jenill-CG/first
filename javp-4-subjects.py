@@ -213,8 +213,10 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     
     # Add the SCHOOL NAME
     pdf.cell(info_cell_width, 3, f"SCHOOL NAME : {info_labels['SCHOOL NAME']}", border='Lr', ln=1)  # Left border only
-
-    pdf.cell(school_name_width, 3, f"CLASS : {info_labels['CLASS']}", border='L', ln=0)
+    
+    class_value = str(int(info_labels['CLASS']))
+    pdf.cell(school_name_width, 3, f"CLASS : {class_value}", border='L', ln=0)
+    # pdf.cell(school_name_width, 3, f"CLASS : {info_labels['CLASS']}", border='L', ln=0)
 
     # Set a different font for the total present students
     pdf.set_font('Arial', 'B', 4.5)  # Set to Arial, Italic, size 5
