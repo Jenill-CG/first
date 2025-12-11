@@ -220,8 +220,10 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.set_font('Arial', 'B', 4.5)  # Set to Arial, Italic, size 5
     pdf.cell(date_width, 3, "TOTAL PRESENT STUDENTS : ______________                       ", border='R', ln=1, align='R')
 
-    # Add the SCHOOL CODE labels
+    # Reset the font back to the original for the remaining labels
+    pdf.set_font('Arial', 'B', 5)
     
+    # Add the SCHOOL CODE labels
     pdf.cell(info_cell_width, 3, f"SCHOOL CODE : {info_labels['SCHOOL CODE']}", border='LR', ln=1)
 
     # Draw a border around the table header
