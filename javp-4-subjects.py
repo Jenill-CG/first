@@ -606,7 +606,7 @@ def main():
                             uploaded_file,
                             partner_id,
                             buffer_percent,
-                            grade,
+                            grade.zfill(2),
                             district_digits,
                             block_digits,
                             school_digits,
