@@ -519,7 +519,8 @@ def main():
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
-  
+                grade_str = str(int(grade)).zfill(2)
+
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
             # col1, col2 = st.columns([1, 3])
@@ -606,7 +607,7 @@ def main():
                             uploaded_file,
                             partner_id,
                             buffer_percent,
-                            grade,
+                            grade_str,
                             district_digits,
                             block_digits,
                             school_digits,
