@@ -764,13 +764,13 @@ def main():
                 preview_pdf_path = None  # To store the path of the first PDF
         
                 # Create folders for districts
-                district_folders = {}
-                for record in result:
-                    district_name = record.get('District Name', 'default_district')
-                    if district_name not in district_folders:
-                        district_folder = os.path.join(tmp_dir, district_name)
-                        os.makedirs(district_folder, exist_ok=True)
-                        district_folders[district_name] = district_folder
+                # district_folders = {}
+                # for record in result:
+                #     district_name = record.get('District Name', 'default_district')
+                #     if district_name not in district_folders:
+                #         district_folder = os.path.join(tmp_dir, district_name)
+                #         os.makedirs(district_folder, exist_ok=True)
+                #         district_folders[district_name] = district_folder
         
                 for index, record in enumerate(result):
                     school_name = record.get('School Name', 'default_school').replace('/', '|')
@@ -787,7 +787,8 @@ def main():
                     create_attendance_pdf(pdf, column_widths, column_names, record, df, format_option)
         
                     # Save the PDF in the appropriate district folder
-                    pdf_path = os.path.join(district_folders[district_name], f'{file_name}.pdf')
+                    # pdf_path = os.path.join(district_folders[district_name], f'{file_name}.pdf')
+                    pdf_path = os.path.join(tmp_dir, f'{file_name}.pdf')
                     pdf.output(pdf_path)
                     pdf_paths.append(pdf_path)
         
@@ -811,13 +812,17 @@ def main():
                 # Create a zip file containing all district folders
                 zip_buffer = io.BytesIO()
                 with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-                    for district_name, folder_path in district_folders.items():
-                        for foldername, _, filenames in os.walk(folder_path):
-                            for filename in filenames:
-                                filepath = os.path.join(foldername, filename)
-                                # Preserve directory structure in ZIP file
-                                arcname = os.path.relpath(filepath, tmp_dir)
-                                zip_file.write(filepath, arcname)
+                    # for district_name, folder_path in district_folders.items():
+                    #     for foldername, _, filenames in os.walk(folder_path):
+                    #         for filename in filenames:
+                    #             filepath = os.path.join(foldername, filename)
+                    #             # Preserve directory structure in ZIP file
+                    #             arcname = os.path.relpath(filepath, tmp_dir)
+                    #             zip_file.write(filepath, arcname)
+                    for filename in os.listdir(tmp_dir):
+                        if filename.endswith(".pdf"):
+                            filepath = os.path.join(tmp_dir, filename)
+                            zip_file.write(filepath, filename)  # No folders in ZIP
         
                 zip_buffer.seek(0)  # Reset buffer position
         
