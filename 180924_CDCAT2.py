@@ -761,7 +761,7 @@ def main():
                 #         district_folder = os.path.join(tmp_dir, district_name)
                 #         os.makedirs(district_folder, exist_ok=True)
                 #         district_folders[district_name] = district_folder
-                district_folders = {"all": tmp_dir}   # All PDFs go into tmp_dir itself
+                # district_folders = {"all": tmp_dir}   # All PDFs go into tmp_dir itself
 
         
                 for index, record in enumerate(result):
@@ -812,7 +812,7 @@ def main():
                     #             arcname = os.path.relpath(filepath, tmp_dir)
                     #             zip_file.write(filepath, arcname)
                     for filename in os.listdir(tmp_dir):
-                        for filename in os.listdir(tmp_dir):
+                        if filename.endswith(".pdf"):
                             filepath = os.path.join(tmp_dir, filename)
                             zip_file.write(filepath, filename)  # No folders in ZIP
         
