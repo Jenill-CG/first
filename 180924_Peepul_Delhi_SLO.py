@@ -190,7 +190,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         if not matched:
             # If no exact match is found, use partial matching for first 5 characters
             for key, value in info_values.items():
-                if label[:5].lower() == key[:5].lower():
+                if label[:4].lower() == key[:4].lower():
                     info_labels[label] = value
                     break
 
