@@ -788,7 +788,7 @@ def main():
                 for index, record in enumerate(result):
                     school_name = record.get('School Name', 'default_school').replace('/', '|')
                     district_name = record.get('District Name', 'default_district').replace('/', '|')
-                    zone_name = record.get('Zone Name', 'default_zone').replace('/', '|')
+                    zone_name = record.get('Zone name', 'default_zone').replace('/', '|')
                     grade = record.get('CLASS', 'default_grade')
         
                     file_name = filename_template.format(school_name=school_name, district_name=district_name, zone_name=zone_name, grade=grade)
