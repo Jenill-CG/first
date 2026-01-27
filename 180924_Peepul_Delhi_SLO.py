@@ -544,12 +544,6 @@ def main():
                 school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
             with col4:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
-
-
-            # district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
-            # block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
-            # school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
-            # student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
             
             # Display parameter descriptions directly in selectbox
             parameter_options = list(parameter_descriptions.values())
@@ -686,7 +680,7 @@ def main():
         with col2:
             st.metric("Number of Schools", num_schools)
         with col3:
-            st.metric("Number of Zone", num_zones)
+            st.metric("Number of Zones", num_zones)
         with col4:
             st.metric("Number of Districts", num_districts)
 
@@ -788,7 +782,7 @@ def main():
                 for index, record in enumerate(result):
                     school_name = record.get('School Name', 'default_school').replace('/', '|')
                     district_name = record.get('District Name', 'default_district').replace('/', '|')
-                    zone_name = record.get('Zone name', 'default_zone').replace('/', '|')
+                    zone_name = record.get('Zone Name', 'default_zone').replace('/', '|')
                     grade = record.get('CLASS', 'default_grade')
         
                     file_name = filename_template.format(school_name=school_name, district_name=district_name, zone_name=zone_name, grade=grade)
