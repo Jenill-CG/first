@@ -18,30 +18,30 @@ import streamlit.components.v1 as components
 parameter_descriptions = {
     'A1': "School + Grade + Student",
     'A2': "Block + School + Grade + Student",
-    'A3': "District + School + Grade + Student",
+    'A3': "zone + School + Grade + Student",
     'A4': "Partner + School + Grade + Student",
-    'A5': "District + Block + School + Grade + Student",
+    'A5': "zone + Block + School + Grade + Student",
     'A6': "Partner + Block + School + Grade + Student",
-    'A7': "Partner + District + School + Grade + Student",
-    'A8': "Partner + District + Block + School + Grade + Student"
+    'A7': "Partner + zone + School + Grade + Student",
+    'A8': "Partner + zone + Block + School + Grade + Student"
 }
 
 # Define the new mapping for parameter sets
 parameter_mapping = {
     'A1': "School_ID,Grade,student_no",
     'A2': "Block_ID,School_ID,Grade,student_no",
-    'A3': "District_ID,School_ID,Grade,student_no",
+    'A3': "Zo_ID,School_ID,Grade,student_no",
     'A4': "Partner_ID,School_ID,Grade,student_no",
-    'A5': "District_ID,Block_ID,School_ID,Grade,student_no",
+    'A5': "zone_ID,Block_ID,School_ID,Grade,student_no",
     'A6': "Partner_ID,Block_ID,School_ID,Grade,student_no",
-    'A7': "Partner_ID,District_ID,School_ID,Grade,student_no",
-    'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no"
+    'A7': "Partner_ID,zone_ID,School_ID,Grade,student_no",
+    'A8': "Partner_ID,zone_ID,Block_ID,School_ID,Grade,student_no"
 }
 
 # Dropdown for selecting file naming format
 naming_options = {
     "School Name + Block Name": "{school_name}_{block_name}",
-    "School Name + District Name": "{school_name}_{district_name}",
+    "School Name + zone Name": "{school_name}_{zone_name}",
     "School Name + Grade": "{school_name}_Grade{grade}"
 }
 
@@ -56,7 +56,7 @@ def generate_custom_id(row, params):
             custom_id.append(str(value))
     return ''.join(custom_id)
 
-def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digits, block_digits, school_digits, student_digits, selected_param):
+def process_data(uploaded_file, partner_id, buffer_percent, grade, zone_digits, block_digits, school_digits, student_digits, selected_param):
     data = pd.read_excel(uploaded_file)
     # Check for duplicate School_IDs
     if data['School_ID'].duplicated().any():
@@ -73,7 +73,7 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     # Assign unique IDs for District, Block, and School, default to "00" for missing values
     # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
     data['School_udise'] = data['School_ID']
-    data['District_ID'] = data['District'].apply(lambda x: str(data['District'].unique().tolist().index(x) + 1).zfill(district_digits) if x != "NA" else "0".zfill(district_digits))
+    data['zone_ID'] = data['zone'].apply(lambda x: str(data['zone'].unique().tolist().index(x) + 1).zfill(zone_digits) if x != "NA" else "0".zfill(zone_digits))
     data['Block_ID'] = data['Block'].apply(lambda x: str(data['Block'].unique().tolist().index(x) + 1).zfill(block_digits) if x != "NA" else "0".zfill(block_digits))
     data['School_ID'] = data['School_ID'].apply(lambda x: str(data['School_ID'].unique().tolist().index(x) + 1).zfill(school_digits) if x != "NA" else "0".zfill(school_digits))
     # Calculate Total Students With Buffer based on the provided buffer percentage
@@ -95,10 +95,10 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     # Use the selected parameter set for generating Custom_ID
     data_expanded['Custom_ID'] = data_expanded.apply(lambda row: generate_custom_id(row, parameter_mapping[selected_param]), axis=1)
     # Generate the additional Excel sheets with mapped columns (without the Gender column)
-    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block']].copy()
-    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'District', 'Block']].copy()
-    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
-    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
+    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'zone', 'Block']].copy()
+    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'zone', 'Block']].copy()
+    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'zone Name', 'Block Name']
+    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'zone Name', 'Block Name']
     # Generate Teacher_Codes sheet
     teacher_codes = data[['School', 'School_ID']].copy()
     teacher_codes.columns = ['School Name', 'School Code']
@@ -171,7 +171,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     # Add labels and fill values from the dictionary
     info_labels = {
-        'DISTRICT': '',
+        'ZONE': '',
         'BLOCK': '',
         'SCHOOL NAME': '',
         'CLASS': '',
@@ -199,7 +199,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     date_width = info_cell_width * 0.35         # 35% of the total width for the date of assessment
 
     # Add the DISTRICT, BLOCK, and other labels
-    pdf.cell(info_cell_width, 3, f"DISTRICT : {info_labels['DISTRICT']}", border='LR', ln=1)
+    pdf.cell(info_cell_width, 3, f"ZONE : {info_labels['zone']}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='LR', ln=1)
 
     # Add the SCHOOL NAME
@@ -384,7 +384,7 @@ def main():
     # Data for the example table
     data = {
         'School_ID': [1001],
-        'District': ['District A'],
+        'Zone': ['Zone A'],
         'Block': ['Block A'],
         'School': ['School A'],
         'Total_Students': [300]
@@ -454,8 +454,8 @@ def main():
         data = pd.read_excel(uploaded_file)
         unique_school_count = data['School_ID'].nunique()
         school_digit_count = len(str(unique_school_count))
-        unique_district_count = data['District'].nunique()
-        district_digit_count = len(str(unique_district_count))
+        unique_zone_count = data['zone'].nunique()
+        zone_digit_count = len(str(unique_zone_count))
         unique_block_count = data['Block'].nunique()
         block_digit_count = len(str(unique_block_count))
         student_digit_count = len(str(max(data['Total_Students'])))
@@ -494,7 +494,7 @@ def main():
             # grade = st.number_input("Grade", min_value=1, value=1)
             # buffer_percent = 0
             buffer_percent = 0.0
-            district_digits = district_digit_count
+            zone_digits = zone_digit_count
             block_digits = block_digit_count
             school_digits = school_digit_count
             student_digits = student_digit_count
@@ -537,7 +537,7 @@ def main():
 
             col1, col2, col3, col4 = st.columns([1,1,1,1])
             with col1:
-                district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
+                zone_digits = st.number_input("zone ID Digits", min_value=zone_digit_count, value=2)
             with col2:
                 block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
             with col3:
@@ -545,11 +545,6 @@ def main():
             with col4:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
 
-
-            # district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
-            # block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
-            # school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
-            # student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
             
             # Display parameter descriptions directly in selectbox
             parameter_options = list(parameter_descriptions.values())
@@ -562,8 +557,8 @@ def main():
 
             if school_digit_count > school_digits:
                 school_digits = school_digit_count
-            if district_digit_count > school_digits:
-                district_digits = district_digit_count
+            if zone_digit_count > school_digits:
+                zone_digits = zone_digit_count
             if block_digit_count > school_digits:
                 block_digits = block_digit_count
 
@@ -573,7 +568,7 @@ def main():
 
             format_string = ' '.join([f"{'X' * (school_digits if 'School' in part else 
             block_digits if 'Block' in part else 
-            district_digits if 'District' in part else 
+            zone_digits if 'zone' in part else 
             len(str(grade)) if 'Grade' in part else 
             len(str(partner_id)) if 'Partner' in part else 
             student_digits)}" for part in format_parts])
@@ -599,7 +594,7 @@ def main():
                             partner_id,
                             buffer_percent,
                             grade,
-                            district_digits,
+                            zone_digits,
                             block_digits,
                             school_digits,
                             student_digits,
@@ -678,7 +673,7 @@ def main():
         num_students = len(df['STUDENT ID'].unique())
         num_schools = df['School Code'].nunique() if 'School Code' in df.columns else 0
         num_blocks = df['Block Name'].nunique() if 'Block Name' in df.columns else 0
-        num_districts = df['District Name'].nunique() if 'District Name' in df.columns else 0
+        num_zones = df['zone Name'].nunique() if 'zone Name' in df.columns else 0
         
         col1, col2, col3, col4 = st.columns(4)
         with col1:
@@ -688,7 +683,7 @@ def main():
         with col3:
             st.metric("Number of Blocks", num_blocks)
         with col4:
-            st.metric("Number of Districts", num_districts)
+            st.metric("Number of Zones", num_zones)
 
         
         # Download button for full data with Custom_IDs and Student_IDs
@@ -777,21 +772,21 @@ def main():
                 preview_pdf_path = None  # To store the path of the first PDF
         
                 # Create folders for districts
-                district_folders = {}
+                zone_folders = {}
                 for record in result:
-                    district_name = record.get('District Name', 'default_district')
-                    if district_name not in district_folders:
-                        district_folder = os.path.join(tmp_dir, district_name)
-                        os.makedirs(district_folder, exist_ok=True)
-                        district_folders[district_name] = district_folder
+                    zone_name = record.get('zone Name', 'default_zone')
+                    if zone_name not in zone_folders:
+                        zone_folder = os.path.join(tmp_dir, zone_name)
+                        os.makedirs(zone_folder, exist_ok=True)
+                        zone_folders[zone_name] = zone_folder
         
                 for index, record in enumerate(result):
                     school_name = record.get('School Name', 'default_school').replace('/', '|')
-                    district_name = record.get('District Name', 'default_district').replace('/', '|')
+                    zone_name = record.get('zone Name', 'default_zone').replace('/', '|')
                     block_name = record.get('Block Name', 'default_block').replace('/', '|')
                     grade = record.get('CLASS', 'default_grade')
         
-                    file_name = filename_template.format(school_name=school_name, district_name=district_name, block_name=block_name, grade=grade)
+                    file_name = filename_template.format(school_name=school_name, zone_name=zone_name, block_name=block_name, grade=grade)
         
                     pdf = FPDF(orientation='P', unit='mm', format='A4')
                     pdf.set_left_margin(15)
@@ -800,7 +795,7 @@ def main():
                     create_attendance_pdf(pdf, column_widths, column_names, image_path, record, df, format_option)
         
                     # Save the PDF in the appropriate district folder
-                    pdf_path = os.path.join(district_folders[district_name], f'{file_name}.pdf')
+                    pdf_path = os.path.join(zone_folders[zone_name], f'{file_name}.pdf')
                     pdf.output(pdf_path)
                     pdf_paths.append(pdf_path)
         
@@ -824,7 +819,7 @@ def main():
                 # Create a zip file containing all district folders
                 zip_buffer = io.BytesIO()
                 with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-                    for district_name, folder_path in district_folders.items():
+                    for zone_name, folder_path in zone_folders.items():
                         for foldername, _, filenames in os.walk(folder_path):
                             for filename in filenames:
                                 filepath = os.path.join(foldername, filename)
