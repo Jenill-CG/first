@@ -28,14 +28,14 @@ parameter_descriptions = {
 
 # Define the new mapping for parameter sets
 parameter_mapping = {
-    'A1': "School_ID,Grade,student_no",
-    'A2': "Block_ID,School_ID,Grade,student_no",
-    'A3': "Zo_ID,School_ID,Grade,student_no",
-    'A4': "Partner_ID,School_ID,Grade,student_no",
-    'A5': "zone_ID,Block_ID,School_ID,Grade,student_no",
-    'A6': "Partner_ID,Block_ID,School_ID,Grade,student_no",
-    'A7': "Partner_ID,zone_ID,School_ID,Grade,student_no",
-    'A8': "Partner_ID,zone_ID,Block_ID,School_ID,Grade,student_no"
+    'A1': "UDISE_ID,Grade,student_no",
+    'A2': "Block_ID,UDISE_ID,Grade,student_no",
+    'A3': "Zo_ID,UDISE_ID,Grade,student_no",
+    'A4': "Partner_ID,UDISE_ID,Grade,student_no",
+    'A5': "zone_ID,Block_ID,UDISE_ID,Grade,student_no",
+    'A6': "Partner_ID,Block_ID,UDISE_ID,Grade,student_no",
+    'A7': "Partner_ID,zone_ID,UDISE_ID,Grade,student_no",
+    'A8': "Partner_ID,zone_ID,Block_ID,UDISE_ID,Grade,student_no"
 }
 
 # Dropdown for selecting file naming format
@@ -59,10 +59,10 @@ def generate_custom_id(row, params):
 def process_data(uploaded_file, partner_id, buffer_percent, grade, zone_digits, block_digits, school_digits, student_digits, selected_param):
     data = pd.read_excel(uploaded_file)
     # Check for duplicate School_IDs
-    if data['School_ID'].duplicated().any():
-        raise ValueError("Duplicate School_ID found in the uploaded file. Please ensure each School_ID is unique.")
+    if data['UDISE_ID'].duplicated().any():
+        raise ValueError("Duplicate UDISE_ID found in the uploaded file. Please ensure each UDISE_ID is unique.")
     
-    unique_school_count = data['School_ID'].nunique()
+    unique_school_count = data['UDISE_ID'].nunique()
     digit_count = len(str(unique_school_count))
     if digit_count > school_digits:
         school_digits = digit_count
@@ -71,18 +71,18 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, zone_digits, 
     data['Partner_ID'] = str(partner_id).zfill(len(str(partner_id)))  # Padding Partner_ID
     data['Grade'] = grade
     # Assign unique IDs for District, Block, and School, default to "00" for missing values
-    # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
-    data['School_udise'] = data['School_ID']
+    # data['School_udise'] = data['UDISE_ID'].astype(str).str.zfill(12)
+    data['School_udise'] = data['UDISE_ID']
     data['zone_ID'] = data['zone'].apply(lambda x: str(data['zone'].unique().tolist().index(x) + 1).zfill(zone_digits) if x != "NA" else "0".zfill(zone_digits))
     data['Block_ID'] = data['Block'].apply(lambda x: str(data['Block'].unique().tolist().index(x) + 1).zfill(block_digits) if x != "NA" else "0".zfill(block_digits))
-    data['School_ID'] = data['School_ID'].apply(lambda x: str(data['School_ID'].unique().tolist().index(x) + 1).zfill(school_digits) if x != "NA" else "0".zfill(school_digits))
+    data['UDISE_ID'] = data['UDISE_ID'].apply(lambda x: str(data['UDISE_ID'].unique().tolist().index(x) + 1).zfill(UDISE_digits) if x != "NA" else "0".zfill(UDISE_digits))
     # Calculate Total Students With Buffer based on the provided buffer percentage
     data['Total_Students_With_Buffer'] = np.floor(data['Total_Students'] * (1 + buffer_percent / 100))
     # Generate student IDs based on the calculated Total Students With Buffer
     def generate_student_ids(row):
         if pd.notna(row['Total_Students_With_Buffer']) and row['Total_Students_With_Buffer'] > 0:
             student_ids = [
-                f"{row['School_ID']}{str(int(row['Grade'])).zfill(2)}{str(i).zfill(student_digits)}"
+                f"{row['UDISE_ID']}{str(int(row['Grade'])).zfill(2)}{str(i).zfill(student_digits)}"
                 for i in range(1, int(row['Total_Students_With_Buffer']) + 1)
             ]
             return student_ids
@@ -95,12 +95,12 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, zone_digits, 
     # Use the selected parameter set for generating Custom_ID
     data_expanded['Custom_ID'] = data_expanded.apply(lambda row: generate_custom_id(row, parameter_mapping[selected_param]), axis=1)
     # Generate the additional Excel sheets with mapped columns (without the Gender column)
-    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'zone', 'Block']].copy()
-    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'zone', 'Block']].copy()
-    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'zone Name', 'Block Name']
-    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'zone Name', 'Block Name']
+    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'UDISE_ID', 'zone', 'Block']].copy()
+    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'UDISE_udise', 'zone', 'Block']].copy()
+    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'UDISE Code', 'zone Name', 'Block Name']
+    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'UDISE Code', 'zone Name', 'Block Name']
     # Generate Teacher_Codes sheet
-    teacher_codes = data[['School', 'School_ID']].copy()
+    teacher_codes = data[['School', 'UDISE_ID']].copy()
     teacher_codes.columns = ['School Name', 'School Code']
     return data_expanded, data_mapped, teacher_codes, data_original_mapped
 
@@ -383,7 +383,7 @@ def main():
 
     # Data for the example table
     data = {
-        'School_ID': [1001],
+        'UDISE_ID': [1001],
         'Zone': ['Zone A'],
         'Block': ['Block A'],
         'School': ['School A'],
@@ -452,7 +452,7 @@ def main():
     uploaded_file = st.file_uploader("Please upload an XLSX file that is less than 200MB in size",type=["xlsx"])
     if uploaded_file is not None:
         data = pd.read_excel(uploaded_file)
-        unique_school_count = data['School_ID'].nunique()
+        unique_school_count = data['UDISE_ID'].nunique()
         school_digit_count = len(str(unique_school_count))
         unique_zone_count = data['zone'].nunique()
         zone_digit_count = len(str(unique_zone_count))
