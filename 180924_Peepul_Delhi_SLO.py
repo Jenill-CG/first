@@ -215,8 +215,11 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.set_font('Arial', 'B', 5)
 
     # Add the CLASS and SECTION labels
-    pdf.cell(info_cell_width, 3.75, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
-    pdf.cell(info_cell_width, 3.75, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
+    pdf.cell(info_cell_width, 3.75, f"CLASS : {info_labels['CLASS']}", border='L', ln=0)
+    pdf.cell(date_width, 3.75, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')
+    
+    pdf.cell(info_cell_width, 3.75, f"UDISE CODE : {info_labels['UDISE CODE']}", border='L', ln=0)
+    pdf.cell(date_width, 3.75, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')
 
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 5)
