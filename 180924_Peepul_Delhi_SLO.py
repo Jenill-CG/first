@@ -206,7 +206,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     
     # Set a different font for the DATE OF ASSESSMENT
     pdf.set_font('Arial', 'B', 4.5)
-    pdf.cell(date_width, 3.75, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='BR')  # Right border only    
+    pdf.cell(date_width, 3.75, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')  # Right border only    
 
     # Reset the font back to the original for the remaining labels
     pdf.set_font('Arial', 'B', 5)    
