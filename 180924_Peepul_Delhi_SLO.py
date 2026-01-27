@@ -96,7 +96,7 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, zone_digits, 
     data_expanded['Custom_ID'] = data_expanded.apply(lambda row: generate_custom_id(row, parameter_mapping[selected_param]), axis=1)
     # Generate the additional Excel sheets with mapped columns (without the Gender column)
     data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'UDISE_ID', 'zone', 'Block']].copy()
-    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'UDISE_udise', 'zone', 'Block']].copy()
+    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'zone', 'Block']].copy()
     data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'UDISE Code', 'zone Name', 'Block Name']
     data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'UDISE Code', 'zone Name', 'Block Name']
     # Generate Teacher_Codes sheet
