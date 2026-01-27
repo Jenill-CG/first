@@ -74,7 +74,7 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
     data['School_udise'] = data['School_ID']
     data['District_ID'] = data['District'].apply(lambda x: str(data['District'].unique().tolist().index(x) + 1).zfill(district_digits) if x != "NA" else "0".zfill(district_digits))
-    data['Zone_ID'] = data['Zone'].apply(lambda x: str(data['Zone'].unique().tolist().index(x) + 1).zfill(zone_digits) if x != "NA" else "0".zfill(block_digits))
+    data['Zone_ID'] = data['Zone'].apply(lambda x: str(data['Zone'].unique().tolist().index(x) + 1).zfill(zone_digits) if x != "NA" else "0".zfill(zone_digits))
     data['School_ID'] = data['School_ID'].apply(lambda x: str(data['School_ID'].unique().tolist().index(x) + 1).zfill(school_digits) if x != "NA" else "0".zfill(school_digits))
     # Calculate Total Students With Buffer based on the provided buffer percentage
     data['Total_Students_With_Buffer'] = np.floor(data['Total_Students'] * (1 + buffer_percent / 100))
@@ -385,7 +385,7 @@ def main():
     data = {
         'School_ID': [1001],
         'District': ['District A'],
-        'Block': ['Block A'],
+        'Zone': ['Zone A'],
         'School': ['School A'],
         'Total_Students': [300]
     }
