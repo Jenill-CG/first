@@ -201,8 +201,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     date_width = info_cell_width * 0.35         # 35% of the total width for the date of assessment
 
     # Add the DISTRICT, BLOCK, and other labels
-    pdf.cell(info_cell_width, 3.75, f"ZONE : {info_labels['ZONE']}", border='LR', ln=0)
-    # pdf.cell(info_cell_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='LR', ln=1)
+    pdf.cell(, 3.75, f"ZONE : {info_labels['ZONE']}", border='LR', ln=0)
+    # pdf.cell(school_name_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='LR', ln=1)
     
     # Set a different font for the DATE OF ASSESSMENT
     pdf.set_font('Arial', 'B', 4.5)
