@@ -175,7 +175,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         # 'BLOCK': '',
         'SCHOOL NAME': '',
         'CLASS': '',
-        'SCHOOL CODE': ''
+        'UDISE CODE': ''
     }
 
     # Prioritize exact matches, but still allow partial matching
@@ -216,7 +216,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     # Add the CLASS and SECTION labels
     pdf.cell(info_cell_width, 3.75, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
-    pdf.cell(info_cell_width, 3.75, f"SCHOOL CODE : {info_labels['SCHOOL CODE']}", border='LR', ln=1)
+    pdf.cell(info_cell_width, 3.75, f"UDISE CODE : {info_labels['UDISE CODE']}", border='LR', ln=1)
 
     # Draw a border around the table header
     pdf.set_font('Arial', 'B', 5)
