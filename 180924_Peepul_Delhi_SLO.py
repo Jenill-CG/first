@@ -279,9 +279,9 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(15, 0.5, 'STUDENT ID', border='LR', align='C')
         pdf.cell(72, 0.5, 'STUDENT NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
-        pdf.cell(18, 0.5, 'TAB ID', border='LR', align='C')
-        pdf.cell(16, 0.5, 'SUBJECT 1', border='LR', align='C')
+        pdf.cell(18, 0.5, 'SUBJECT 1', border='LR', align='C')
         pdf.cell(16, 0.5, 'SUBJECT 2', border='LR', align='C')
+        pdf.cell(16, 0.5, 'SUBJECT 3', border='LR', align='C')
         pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
         pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
 
@@ -294,7 +294,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(15, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
         pdf.cell(72, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under GENDER
-        pdf.cell(18, 4.5, '', border='LBR', align='C')  # Empty cell under TAB ID
+        pdf.cell(18, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under TAB ID
         pdf.cell(16, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 1
         pdf.cell(16, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 2
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
@@ -747,15 +747,15 @@ def main():
                 'SECTION': 12
             }
         else:
-            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'TAB ID', 'SUBJECT 1', 'SUBJECT 2', 'SECTION', 'SESSION']
+            column_names = ['S.NO', 'STUDENT ID', 'STUDENT NAME', 'GENDER', 'SUBJECT 1', 'SUBJECT 2','SUBJECT 3', 'SECTION', 'SESSION']
             column_widths = {
                 'S.NO': 6,
                 'STUDENT ID': 15,
                 'STUDENT NAME': 72,
-                'GENDER': 12,
-                'TAB ID': 18,
+                'GENDER': 14,
                 'SUBJECT 1': 16,
                 'SUBJECT 2': 16,
+                'SUBJECT 3': 16,
                 'SECTION': 12,
                 'SESSION': 12
             }
