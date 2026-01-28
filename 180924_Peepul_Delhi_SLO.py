@@ -205,7 +205,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     # pdf.cell(school_name_width, 3, f"BLOCK : {info_labels['BLOCK']}", border='LR', ln=1)
     
     # Set a different font for the DATE OF ASSESSMENT
-    pdf.set_font('Arial', 'B', 4.5)
+    pdf.set_font('Arial', 'B', 5.5)
     pdf.cell(date_width, 3.75, "DATE OF ASSESSMENT : ______________                       ", border='R', ln=1, align='R')  # Right border only    
 
     # Reset the font back to the original for the remaining labels
@@ -222,14 +222,14 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     # Add the CLASS and SECTION labels
     pdf.cell(school_name_width, 3.75, f"CLASS : {info_labels['CLASS']}", border='L', ln=0)
     
-    pdf.set_font('Arial', 'B', 4.5)
+    pdf.set_font('Arial', 'B', 5.5)
     pdf.cell(date_width, 3.75, "TOTAL PRESENT STUDENTS : _____                       ", border='R', ln=1, align='R')
 
     pdf.set_font('Arial', 'B', 7)
     pdf.cell(school_name_width, 3.75, f"UDISE CODE : {info_labels['UDISE CODE']}", border='L', ln=0)
 
     
-    pdf.set_font('Arial', 'B', 4.5)
+    pdf.set_font('Arial', 'B', 5.5)
     pdf.cell(date_width, 3.75, " TOTAL ABSENT STUDENTS : _____                       ", border='R', ln=1, align='R')
 
     # Draw a border around the table header
