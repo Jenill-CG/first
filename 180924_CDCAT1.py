@@ -533,7 +533,7 @@ def main():
             with col4:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=3)
 
-            states = ["MAHARASHTRA_1","TELANGANA","MAHARASHTRA_2","JHARKHAND", "HIMACHAL PRADESH", "UTTAR PRADESH"]
+            states = ["ANDHRA PRADESH","MAHARASHTRA_1","TELANGANA","MAHARASHTRA_2","JHARKHAND", "HIMACHAL PRADESH", "UTTAR PRADESH"]
             st.markdown("➡️ Please select the State", unsafe_allow_html=True)
             selected_state = st.selectbox("Desired state for Student IDs", states,key="selected_state")
             
